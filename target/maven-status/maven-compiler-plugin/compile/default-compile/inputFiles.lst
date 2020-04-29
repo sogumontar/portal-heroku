@@ -1,0 +1,129 @@
+<<<<<<< HEAD
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\ProdukDesaController.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\RoleRepo.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\AuthenticationResponse.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\ProdukDesaServiceImpl.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\DesaController.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\exception\AppException.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\FieldForProdukDesa.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\Users.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\KecamatanRepo.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\CreateResponse.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\ApiResponse.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\request\RegisterRequest.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\route\DesaControllerRoute.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\TablesConstant.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\JwtLoginResponse.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\FieldForTableDesa.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\seeder\RoleSeeder.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\PortalDesaApplication.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\Desa.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\JwtAuthenticationFilter.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\UserPrincipal.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\config\SecurityConfig.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\ProdukDesa.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\exception\AuthException.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\AuthenticationServiceImpl.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\KecamatanController.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\KecamatanServiceImpl.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\defaults\RoleName.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\route\AuthenticationControllerRoute.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\GlobalFieldConstant.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\Roles.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\DesaRepo.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\ProdukDesaRepo.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\config\WebMvcConfig.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\request\ProdukDesaRequest.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\sequence\SequenceUsers.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\SequenceConstantField.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\SequenceUsersRepo.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\UserRoleRepo.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\DesaService.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\UsersRepo.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\FieldForTableKecamatan.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\AuthenticationController.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\KecamatanService.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\request\LoginRequest.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\seeder\KecamatanSeeder.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\JwtTokenProvider.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\JwtAuthenticationEntryPoint.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\defaults\KecamatanDefaults.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\timestamp\Timestamp.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\CustomUserDetailsService.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\UsersServiceImpl.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\sequence\SequenceProduk.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\Kecamatan.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\route\ProdukDesaControllerRoute.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\AuthenticationService.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\ProdukDesaService.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\DesaServiceImpl.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\UsersService.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\route\KecamatanControllerRoute.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\request\DesaRequest.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\UserRole.java
+C:\xampp\htdocs\PA3\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\SequenceProdukRepo.java
+=======
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\KecamatanController.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\Roles.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\CreateResponse.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\exception\AuthException.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\SequenceConstantField.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\sequence\SequenceProduk.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\UserRoleRepo.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\KecamatanService.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\DesaService.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\exception\AppException.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\PortalDesaApplication.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\SequenceProdukRepo.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\ProdukDesaService.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\defaults\RoleName.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\GlobalFieldConstant.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\request\ProdukDesaRequest.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\route\AuthenticationControllerRoute.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\JwtTokenProvider.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\config\WebMvcConfig.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\TablesConstant.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\UserPrincipal.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\request\LoginRequest.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\DesaRepo.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\request\RegisterRequest.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\FieldForTableKecamatan.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\Desa.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\RoleRepo.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\ProdukDesaController.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\AuthenticationServiceImpl.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\KecamatanServiceImpl.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\ProdukDesa.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\seeder\KecamatanSeeder.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\ProdukDesaServiceImpl.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\JwtLoginResponse.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\ProdukDesaRepo.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\seeder\RoleSeeder.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\FieldForProdukDesa.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\KecamatanRepo.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\AuthenticationService.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\UsersServiceImpl.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\defaults\KecamatanDefaults.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\AuthenticationController.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\UsersService.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\request\DesaRequest.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\SequenceUsersRepo.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\JwtAuthenticationEntryPoint.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\ApiResponse.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\route\KecamatanControllerRoute.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\DesaController.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\route\ProdukDesaControllerRoute.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\controller\route\DesaControllerRoute.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\Users.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\UserRole.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\service\implement\DesaServiceImpl.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\sequence\SequenceUsers.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\repository\UsersRepo.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\constant\FieldForTableDesa.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\Kecamatan.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\CustomUserDetailsService.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\config\SecurityConfig.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\payload\AuthenticationResponse.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\model\timestamp\Timestamp.java
+D:\Project\PA III\PA III\Backend\PA-III\PortalDesa\PortalDesa\src\main\java\com\example\PortalDesa\security\JwtAuthenticationFilter.java
+>>>>>>> d7f84afeb395a69939a8af61b3fc9ee10f234e69
