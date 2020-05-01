@@ -92,11 +92,24 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         users.setRoles(Collections.singleton(roles));
 
         Users save= usersRepo.save(users);
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        registerRequest.getUsername(),
+                        registerRequest.getPassword()
+                )
+        );
+        String token=jwtTokenProvider.generateToken(authentication);
+        UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
         URI location = ServletUriComponentsBuilder
                 .fromCurrentContextPath().path("/users/{username}")
                 .buildAndExpand(save.getUsername()).toUri();
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        return ResponseEntity.created(location).body(new AuthenticationResponse(timestamp.toString(),"201", "OK", "User registered successfully"));
+        return ResponseEntity.created(location).body(new JwtLoginResponse(
+                token,
+                roles.toString(),
+                userPrincipal.getSku(),
+                userPrincipal.getStatus(),
+                userPrincipal.getName(),
+                userPrincipal.getEmail()));
     }
     @Override
     public void registerSeed(@RequestBody RegisterRequest registerRequest) {
