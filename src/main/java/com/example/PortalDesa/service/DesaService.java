@@ -8,4 +8,5 @@ import org.springframework.http.ResponseEntity;
  */
 public interface DesaService {
     public ResponseEntity<?> addDesa(DesaRequest desaRequest);
+    public void updateDesa(String sku, DesaRequest desaRequest);
 }

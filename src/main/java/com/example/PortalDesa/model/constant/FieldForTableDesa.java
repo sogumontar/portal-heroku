@@ -8,4 +8,5 @@ public interface FieldForTableDesa {
     public String FIELD_JUMLAH_PENDUDUK = "jumlah_penduduk";
     public String FIELD_STATUS = "status";
     public String FIELD_NAMA_KECAMATAN = "kecamatan";
+    public String FIELD_SKU_ADMIN_DESA = "sku_admin";
 }

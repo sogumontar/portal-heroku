@@ -5,8 +5,8 @@ package com.example.PortalDesa.controller.route;
  */
 public interface AdminDevControllerRoute {
     //forAll
-    public String ROUTE_FOOR_ADMIN_DEV="adminDev/";
-
-
+    public String ROUTE_FOOR_ADMIN_DEV="/adminDev";
     public String ROUTE_FOR_ADD_ADMIN_DESA="/add";
+    public String ROUTE_UPDATE_DESA="/update/{sku}";
+
 }

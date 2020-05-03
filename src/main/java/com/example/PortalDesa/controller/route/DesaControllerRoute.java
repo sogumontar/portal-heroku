@@ -12,4 +12,6 @@ public interface DesaControllerRoute {
     public String ROUTE_DESA_FIND_BY_NAMA = "/{nama}";
     public String ROUTE_ADD_DESA = "/add";
     public String ROUTE_FIND_BY_KECAMATAN = "/kecamatan/{kecamatan}";
+    public String ROUTE_CHECK_DATA_DESA ="/desa/{sku}";
+    public String ROUTE_FIND_BY_SKU_ADMIN ="/desa/skuAdmin/{sku}";
 }
