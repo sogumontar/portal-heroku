@@ -31,4 +31,6 @@ public interface ProdukDesaService {
     public void activate(String sku);
 
     public List<ProdukDesa> findAllSuspend();
+
+    public void addGambarDesa(String base64, String sku);
 }

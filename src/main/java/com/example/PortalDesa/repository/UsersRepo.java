@@ -1,9 +1,14 @@
 package com.example.PortalDesa.repository;
 
 import com.example.PortalDesa.model.Users;
+import com.example.PortalDesa.model.UserRole;
+import com.example.PortalDesa.model.defaults.RoleName;
+import com.example.PortalDesa.seeder.RoleSeeder;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -16,4 +21,6 @@ public interface UsersRepo  extends JpaRepository<Users,String> {
     Boolean existsByEmail(String email);
     Users findByUsername(String username);
     Users findFirstBySku(String sku);
+    @Query("  SELECT u.name, u.alamat, u.username, u.email, u.status FROM Users u , UserRole ur WHERE u.sku = ur.sku_user AND (ur.role_id = ?1)")
+    List findAllByRoles(int val);
 }

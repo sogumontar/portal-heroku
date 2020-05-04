@@ -4,6 +4,7 @@ import com.example.PortalDesa.controller.route.DesaControllerRoute;
 import com.example.PortalDesa.model.Desa;
 import com.example.PortalDesa.model.defaults.KecamatanDefaults;
 import com.example.PortalDesa.payload.DesaResponse;
+import com.example.PortalDesa.payload.request.AddDesaPictureRequest;
 import com.example.PortalDesa.payload.request.DesaRequest;
 import com.example.PortalDesa.repository.DesaRepo;
 import com.example.PortalDesa.service.implement.DesaServiceImpl;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 import static java.lang.Boolean.FALSE;
@@ -20,6 +22,7 @@ import static java.lang.Boolean.TRUE;
 /**
  * Created by Sogumontar Hendra Simangunsong on 15/04/2020.
  */
+@CrossOrigin
 @RestController
 @RequestMapping(DesaControllerRoute.ROUTE_DESA_)
 public class DesaController {
@@ -47,6 +50,14 @@ public class DesaController {
         return desaService.addDesa(desaRequest);
     }
 
+    @PutMapping(DesaControllerRoute.ROUTE_ADD_DESA_PICTURE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<?> addDesaPicture(@RequestBody AddDesaPictureRequest addDesaPictureRequest) throws IOException {
+        System.out.println("masuk ke sini");
+        desaService.addDesaPicture(addDesaPictureRequest.getBase64File(),addDesaPictureRequest.getSkuDesa());
+        return ResponseEntity.ok("");
+    }
+
     @GetMapping(DesaControllerRoute.ROUTE_FIND_BY_KECAMATAN)
     public ResponseEntity<?> findByKecamatan(@PathVariable KecamatanDefaults kecamatan){
         return ResponseEntity.ok(desaRepo.findAllByKecamatan(kecamatan));
@@ -61,9 +72,16 @@ public class DesaController {
         return ResponseEntity.ok(FALSE);
     }
 
+    @CrossOrigin
     @GetMapping(DesaControllerRoute.ROUTE_FIND_BY_SKU_ADMIN)
     public ResponseEntity<?> findBySkuAdmin(@PathVariable String sku){
         return ResponseEntity.ok(new DesaResponse("sukses",desaRepo.findFirstBySkuAdmin(sku)));
+    }
+
+    @PutMapping(DesaControllerRoute.ROUTE_UPDATE_DESA)
+    public ResponseEntity<?> updateDesaBySku(@PathVariable String sku, @RequestBody DesaRequest desaRequest){
+        desaService.updateDesa(sku,desaRequest);
+        return ResponseEntity.ok("");
     }
 
 

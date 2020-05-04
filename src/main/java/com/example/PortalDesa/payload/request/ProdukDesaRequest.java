@@ -10,22 +10,29 @@ public class ProdukDesaRequest {
     String nama;
     Integer harga;
     String deskripsi;
-    String desa;
     String gambar;
+    String skuDesa;
 
-    public ProdukDesaRequest(String nama, Integer harga, String deskripsi, String desa, String gambar) {
+    public ProdukDesaRequest(String nama, Integer harga, String deskripsi, String gambar, String skuDesa) {
         this.nama = nama;
         this.harga = harga;
         this.deskripsi = deskripsi;
-        this.desa = desa;
         this.gambar = gambar;
+        this.skuDesa = skuDesa;
     }
 
-    public ProdukDesaRequest(String nama, Integer harga, String deskripsi, String desa) {
+    public ProdukDesaRequest(String nama, Integer harga, String deskripsi) {
         this.nama = nama;
         this.harga = harga;
         this.deskripsi = deskripsi;
-        this.desa = desa;
+    }
+
+    public String getSkuDesa() {
+        return skuDesa;
+    }
+
+    public void setSkuDesa(String skuDesa) {
+        this.skuDesa = skuDesa;
     }
 
     public String getGambar() {
@@ -34,14 +41,6 @@ public class ProdukDesaRequest {
 
     public void setGambar(String gambar) {
         this.gambar = gambar;
-    }
-
-    public String getDesa() {
-        return desa;
-    }
-
-    public void setDesa(String desa) {
-        this.desa = desa;
     }
 
     public String getNama() {

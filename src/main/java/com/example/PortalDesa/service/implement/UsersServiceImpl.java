@@ -6,6 +6,8 @@ import com.example.PortalDesa.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Sogumontar Hendra Simangunsong on 09/04/2020.
  */
@@ -18,5 +20,20 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public Users findByUsername(String username) {
         return usersRepo.findByUsername(username);
+    }
+
+    @Override
+    public List findAllAccountCustomer() {
+        return usersRepo.findAllByRoles(1);
+    }
+
+    @Override
+    public List findAllAccountMerchant() {
+        return usersRepo.findAllByRoles(3);
+    }
+
+    @Override
+    public List findAllAccountAdmin() {
+       return usersRepo.findAllByRoles(2);
     }
 }

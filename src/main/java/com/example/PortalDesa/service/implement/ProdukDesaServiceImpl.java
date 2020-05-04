@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Base64;
 import java.util.List;
 
 /**
@@ -47,13 +50,17 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
 
     @Override
     public void save(ProdukDesaRequest request) {
+        Integer val = produkDesaRepo.counter(request.getSkuDesa());
+        System.out.println(val);
+        val++;
+        String pict =request.getSkuDesa()+"-"+val.toString()+".png";
         ProdukDesa produkDesa = new ProdukDesa(
-                skuGenerator(request.getNama(), request.getDesa()),
+                skuGenerator(request.getNama(), request.getSkuDesa()),
                 request.getNama(),
                 request.getHarga(),
-                request.getGambar(),
+                pict,
                 request.getDeskripsi(),
-                request.getDesa(),
+                request.getSkuDesa(),
                 1
         );
         produkDesaRepo.save(produkDesa);
@@ -72,13 +79,13 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
     @Override
     @Transactional
     public void updateProduk(String sku, ProdukDesaRequest request) {
-        produkDesaRepo.updateBySku(sku, request.getNama(), request.getHarga(), request.getDeskripsi(), request.getDesa());
+        produkDesaRepo.updateBySku(sku, request.getNama(), request.getHarga(), request.getDeskripsi());
     }
 
     @Override
     @Transactional
     public void updateProdukWithGambar(String sku, ProdukDesaRequest request) {
-        produkDesaRepo.updateBySkuWithGambar(sku, request.getNama(), request.getHarga(), request.getDeskripsi(), request.getDesa(), request.getGambar());
+        produkDesaRepo.updateBySkuWithGambar(sku, request.getNama(), request.getHarga(), request.getDeskripsi(), request.getGambar());
     }
 
     @Override
@@ -103,5 +110,29 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
     @Override
     public List<ProdukDesa> findAllSuspend() {
         return produkDesaRepo.findAllByStatus(2);
+    }
+
+    @Override
+    public void addGambarDesa(String base64, String sku) {
+        Integer val = produkDesaRepo.counter(sku);
+        System.out.println(val);
+        val++;
+        File currentDirFile = new File("");
+        String helper = currentDirFile.getAbsolutePath();
+        String currentDir = helper+"/Picture/ProdukDesa";
+        String pict =sku+"-"+val.toString()+".png";
+        String partSeparator = ",";
+        String encodedImg ="";
+        if (base64.contains(partSeparator)) {
+            encodedImg = base64.split(partSeparator)[1];
+        }
+        File file =new File(currentDir+"/"+pict);
+        try(FileOutputStream fos = new FileOutputStream(file)){
+            byte[] decoder = Base64.getDecoder().decode(encodedImg);
+            fos.write(decoder);
+            System.out.println("Image file saved");
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }

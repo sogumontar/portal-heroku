@@ -37,6 +37,12 @@ public class ProdukDesaController {
         return ResponseEntity.ok("Add Produk Success");
     }
 
+    @PostMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ADD_GAMBAR)
+    public ResponseEntity<?> addGambarDesa(@RequestBody ProdukDesaRequest request){
+        produkDesaService.addGambarDesa(request.getGambar(),request.getNama());
+        return ResponseEntity.ok("");
+    }
+
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_UPDATE)
     public ResponseEntity<?> updateProdukDesa(@RequestBody ProdukDesaRequest request, @PathVariable String sku) {
         produkDesaService.updateProduk(sku, request);
