@@ -24,6 +24,11 @@ public class KecamatanServiceImpl implements KecamatanService {
     }
 
     @Override
+    public List findAllWithDesa() {
+        return kecamatanRepo.findAllWithDesa();
+    }
+
+    @Override
     public Kecamatan findFirstByNama(String name) {
         return kecamatanRepo.findFirstByNama(name);
     }

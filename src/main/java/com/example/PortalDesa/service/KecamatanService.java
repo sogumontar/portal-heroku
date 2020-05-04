@@ -11,6 +11,8 @@ import java.util.List;
 public interface KecamatanService {
     public List findAll();
 
+    public List findAllWithDesa();
+
     public Kecamatan findFirstByNama(String name);
 
 }

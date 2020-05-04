@@ -30,6 +30,11 @@ public class KecamatanController {
         return ResponseEntity.ok(kecamatanService.findAll());
     }
 
+    @GetMapping(KecamatanControllerRoute.ROUTE_KECAMATAN_WITH_DESA)
+    public ResponseEntity<?> findAllWithDesa(){
+        System.out.println(kecamatanService.findAllWithDesa());
+        return ResponseEntity.ok(kecamatanService.findAllWithDesa());
+    }
     @GetMapping(KecamatanControllerRoute.ROUTE_KECAMATAN_GET_BY_NAME)
     public ResponseEntity<?> findByName(@PathVariable String name){
         return ResponseEntity.ok(kecamatanService.findFirstByNama(name));

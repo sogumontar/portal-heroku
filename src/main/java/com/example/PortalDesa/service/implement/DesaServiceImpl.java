@@ -41,7 +41,8 @@ public class DesaServiceImpl implements DesaService {
                 desaRequest.getNama(),
                 KecamatanDefaults.valueOf(desaRequest.getKecamatan()),
                 1,
-                skuAdmin
+                skuAdmin,
+                desaRequest.getKecamatan()
         );
         desaRepo.save(desa);
         return ResponseEntity.ok(desa);

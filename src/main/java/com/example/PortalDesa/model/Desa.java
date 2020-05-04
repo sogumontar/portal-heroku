@@ -44,7 +44,9 @@ public class Desa  {
     @Column(name = FieldForTableDesa.FIELD_SKU_ADMIN_DESA)
     public String skuAdmin;
 
-    public Desa(String sku, String nama, String namaKepalaDesa, int jumlahPenduduk, KecamatanDefaults kecamatan, String gambar, int status, String skuAdmin) {
+    public String kec;
+
+    public Desa(String sku, String nama, String namaKepalaDesa, int jumlahPenduduk, KecamatanDefaults kecamatan, String gambar, int status, String skuAdmin, String kec) {
         this.sku = sku;
         this.nama = nama;
         this.namaKepalaDesa = namaKepalaDesa;
@@ -53,15 +55,25 @@ public class Desa  {
         this.gambar = gambar;
         this.status = status;
         this.skuAdmin = skuAdmin;
+        this.kec= kec;
     }
 
 
-    public Desa(String sku, String nama, KecamatanDefaults kecamatan, int status, String skuAdmin) {
+    public Desa(String sku, String nama, KecamatanDefaults kecamatan, int status, String skuAdmin,String kec) {
         this.sku = sku;
         this.nama = nama;
         this.kecamatan = kecamatan;
         this.status = status;
         this.skuAdmin = skuAdmin;
+        this.kec=kec;
+    }
+
+    public String getKec() {
+        return kec;
+    }
+
+    public void setKec(String kec) {
+        this.kec = kec;
     }
 
     public String getSkuAdmin() {
