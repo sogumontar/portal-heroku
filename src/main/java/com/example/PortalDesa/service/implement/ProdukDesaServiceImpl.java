@@ -119,7 +119,7 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         val++;
         File currentDirFile = new File("");
         String helper = currentDirFile.getAbsolutePath();
-        String currentDir = helper+"/Picture/ProdukDesa";
+        String currentDir = helper+"/src/main/resources/static/images/";
         String pict =sku+"-"+val.toString()+".png";
         String partSeparator = ",";
         String encodedImg ="";
