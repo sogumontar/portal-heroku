@@ -58,7 +58,7 @@ public class DesaServiceImpl implements DesaService {
     public void addDesaPicture(String base64, String skuDesa) throws IOException {
         File currentDirFile = new File("");
         String helper = currentDirFile.getAbsolutePath();
-        String currentDir = helper+"/Picture/Desa";
+        String currentDir = helper+"/src/main/resources/static/images/Desa";
         String pict =skuDesa+".png";
         String partSeparator = ",";
         String encodedImg ="";

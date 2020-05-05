@@ -16,6 +16,8 @@ import java.util.List;
  */
 @Repository
 public interface DesaRepo extends JpaRepository<Desa,String> {
+    @Query("SELECT p FROM Desa p WHERE p.status =1 ORDER BY p.kecamatan")
+    public List findAll();
     public Desa findFirstByNama(String nama);
     public List findAllByKecamatan(Kecamatan kecamatan);
     public List findAllByKecamatan(KecamatanDefaults kecamatan);

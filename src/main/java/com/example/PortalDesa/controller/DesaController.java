@@ -32,6 +32,10 @@ public class DesaController {
 
     @Autowired
     DesaServiceImpl desaService;
+    @GetMapping("/test/")
+    public String test(){
+        return "tongtong ma dongani au TUHAN pleaseee. Bless me ";
+    }
 
     @GetMapping(DesaControllerRoute.ROUTE_DESA_ALL)
     public List findAll() {

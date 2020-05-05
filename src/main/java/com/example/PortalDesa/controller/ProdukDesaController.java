@@ -26,6 +26,11 @@ public class ProdukDesaController {
         return ResponseEntity.ok(produkDesaService.findAll());
     }
 
+    @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ALL_BY_SKU_DESA)
+    public ResponseEntity<?> findALlBySkuDesa(@PathVariable String sku){
+        return ResponseEntity.ok(produkDesaService.findAllBySkuDesa(sku));
+    }
+
     @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_FIND_BY_SKU)
     public ResponseEntity<?> findBySku(@PathVariable String sku) {
         return ResponseEntity.ok(produkDesaService.findBySku(sku));

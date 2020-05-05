@@ -67,6 +67,11 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
     }
 
     @Override
+    public List findAllBySkuDesa(String sku) {
+        return produkDesaRepo.findAllBySkuAdmin(sku);
+    }
+
+    @Override
     public List<ProdukDesa> findAll() {
         return produkDesaRepo.findAll();
     }
@@ -119,7 +124,7 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         val++;
         File currentDirFile = new File("");
         String helper = currentDirFile.getAbsolutePath();
-        String currentDir = helper+"/src/main/resources/static/images/";
+        String currentDir = helper+"/src/main/resources/static/images/ProdukDesa/";
         String pict =sku+"-"+val.toString()+".png";
         String partSeparator = ",";
         String encodedImg ="";
@@ -130,7 +135,7 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         try(FileOutputStream fos = new FileOutputStream(file)){
             byte[] decoder = Base64.getDecoder().decode(encodedImg);
             fos.write(decoder);
-            System.out.println("Image file saved with name : " +pict);
+            System.out.println("Image file saved");
         }catch(Exception e){
             System.out.println(e.getMessage());
         }

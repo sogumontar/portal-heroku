@@ -16,6 +16,8 @@ public interface ProdukDesaService {
 
     public void save(ProdukDesaRequest request);
 
+    public List findAllBySkuDesa(String sku);
+
     public List<ProdukDesa> findAll();
 
     public ProdukDesa findBySku(String sku);
