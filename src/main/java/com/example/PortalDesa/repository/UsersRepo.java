@@ -21,6 +21,6 @@ public interface UsersRepo  extends JpaRepository<Users,String> {
     Boolean existsByEmail(String email);
     Users findByUsername(String username);
     Users findFirstBySku(String sku);
-    @Query("  SELECT u.name, u.alamat, u.username, u.email, u.status FROM Users u , UserRole ur WHERE u.sku = ur.sku_user AND (ur.role_id = ?1)")
+    @Query("  SELECT u FROM Users u , UserRole ur WHERE u.sku = ur.sku_user AND (ur.role_id = ?1)")
     List findAllByRoles(int val);
 }
