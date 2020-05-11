@@ -1,13 +1,20 @@
 package com.example.PortalDesa.controller;
 
+import com.example.PortalDesa.controller.route.ProdukDesaControllerRoute;
 import com.example.PortalDesa.controller.route.TransaksiControllerRoute;
 import com.example.PortalDesa.model.TransaksiProduk;
 import com.example.PortalDesa.repository.TransaksiProdukRepo;
 import com.example.PortalDesa.service.TransaksiService;
+import com.example.PortalDesa.service.implement.StorageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 /**
  * Created by Sogumontar Hendra Simangunsong on 05/05/2020.
@@ -21,6 +28,10 @@ public class TransaksiController {
 
     @Autowired
     TransaksiProdukRepo transaksiProdukRepo;
+
+    @Autowired
+    StorageServiceImpl storageService;
+
     @PutMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_BAYAR_RESI)
     public ResponseEntity<?> update(@PathVariable  String idPesanan, @RequestBody TransaksiProduk transaksiProduk){
         System.out.println(idPesanan +"    "+transaksiProduk.getSkuCustomer()+"     "+transaksiProduk.getResi());
@@ -58,5 +69,13 @@ public class TransaksiController {
     @GetMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_FIND_ALL_PESANAN)
     public ResponseEntity<?> findAllPesanan(){
         return ResponseEntity.ok(transaksiProdukRepo.findAllByStatus(2));
+    }
+
+    @GetMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_IMAGE_RESI)
+    public ResponseEntity<byte[]> getImage(@PathVariable String filePath) throws IOException {
+        HttpHeaders headers = new HttpHeaders();
+
+        headers.setContentType(MediaType.IMAGE_PNG);
+        return new ResponseEntity<byte[]>(storageService.loadImage("Resi",filePath), headers, HttpStatus.OK);
     }
 }

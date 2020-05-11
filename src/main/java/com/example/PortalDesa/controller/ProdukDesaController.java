@@ -3,12 +3,21 @@ package com.example.PortalDesa.controller;
 import com.example.PortalDesa.controller.route.ProdukDesaControllerRoute;
 import com.example.PortalDesa.model.ProdukDesa;
 import com.example.PortalDesa.payload.request.ProdukDesaRequest;
+import com.example.PortalDesa.service.StorageService;
 import com.example.PortalDesa.service.implement.ProdukDesaServiceImpl;
+import com.example.PortalDesa.service.implement.StorageServiceImpl;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -20,6 +29,9 @@ import java.util.List;
 public class ProdukDesaController {
     @Autowired
     ProdukDesaServiceImpl produkDesaService;
+
+    @Autowired
+    private StorageServiceImpl storageService;
 
     @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ALL)
     public ResponseEntity<?> findAll() {
@@ -85,4 +97,11 @@ public class ProdukDesaController {
         return ResponseEntity.ok("Activate Success");
     }
 
+    @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_IMAGE_GET_BY_NAME)
+    public ResponseEntity<byte[]> getImage(@PathVariable String filePath) throws IOException {
+        HttpHeaders headers = new HttpHeaders();
+
+        headers.setContentType(MediaType.IMAGE_PNG);
+        return new ResponseEntity<byte[]>(storageService.loadImage("ProdukDesa",filePath), headers, HttpStatus.OK);
+    }
 }

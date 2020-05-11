@@ -11,5 +11,6 @@ public interface KecamatanControllerRoute {
     public String ROUTE_KECAMATAN_ALL = "/";
     public String ROUTE_KECAMATAN_WITH_DESA = "/withDesa";
     public String ROUTE_KECAMATAN_GET_BY_NAME = "/{name}";
+    public String ROUTE_KECAMATAN_GET_IMAGE_BY_NAME = "/get/{filePath}";
     public String ROUTE_KECAMATAN_GET_BY_SKU = "/sku/{sku}";
 }

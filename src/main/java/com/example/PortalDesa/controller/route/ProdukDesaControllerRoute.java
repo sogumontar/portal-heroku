@@ -19,4 +19,5 @@ public interface ProdukDesaControllerRoute {
     public String ROUTE_PRODUK_DESA_DELETE = "/delete/{sku}";
     public String ROUTE_PRODUK_DESA_ALL_SUSPEND = "/suspend/";
     public String ROUTE_PRODUK_DESA_ACTIVATE_BY_SKU = "/activate/{sku}";
+    public String ROUTE_PRODUK_DESA_IMAGE_GET_BY_NAME = "/get/{filePath}";
 }

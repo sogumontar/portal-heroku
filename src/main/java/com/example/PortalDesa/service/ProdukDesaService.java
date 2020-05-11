@@ -3,6 +3,7 @@ package com.example.PortalDesa.service;
 import com.example.PortalDesa.model.ProdukDesa;
 import com.example.PortalDesa.payload.request.ProdukDesaRequest;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -35,4 +36,7 @@ public interface ProdukDesaService {
     public List<ProdukDesa> findAllSuspend();
 
     public void addGambarDesa(String base64, String sku);
+
+    byte[] loadImage(String fileName) throws IOException;
+
 }

@@ -8,8 +8,11 @@ import com.example.PortalDesa.payload.request.AddDesaPictureRequest;
 import com.example.PortalDesa.payload.request.DesaRequest;
 import com.example.PortalDesa.repository.DesaRepo;
 import com.example.PortalDesa.service.implement.DesaServiceImpl;
+import com.example.PortalDesa.service.implement.StorageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,10 +35,9 @@ public class DesaController {
 
     @Autowired
     DesaServiceImpl desaService;
-    @GetMapping("/test/")
-    public String test(){
-        return "tongtong ma dongani au TUHAN pleaseee. Bless me ";
-    }
+
+    @Autowired
+    StorageServiceImpl storageService;
 
     @GetMapping(DesaControllerRoute.ROUTE_DESA_ALL)
     public List findAll() {
@@ -57,7 +59,6 @@ public class DesaController {
     @PutMapping(DesaControllerRoute.ROUTE_ADD_DESA_PICTURE)
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<?> addDesaPicture(@RequestBody AddDesaPictureRequest addDesaPictureRequest) throws IOException {
-        System.out.println("masuk ke sini");
         desaService.addDesaPicture(addDesaPictureRequest.getBase64File(),addDesaPictureRequest.getSkuDesa());
         return ResponseEntity.ok("");
     }
@@ -86,6 +87,12 @@ public class DesaController {
     public ResponseEntity<?> updateDesaBySku(@PathVariable String sku, @RequestBody DesaRequest desaRequest){
         desaService.updateDesa(sku,desaRequest);
         return ResponseEntity.ok("");
+    }
+    @GetMapping(DesaControllerRoute.ROUTE_FIND_IMAGE_DESA)
+    public ResponseEntity<byte[]> getImage(@PathVariable String filePath) throws IOException {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_PNG);
+        return new ResponseEntity<byte[]>(storageService.loadImage("Desa",filePath), headers, HttpStatus.OK);
     }
 
 

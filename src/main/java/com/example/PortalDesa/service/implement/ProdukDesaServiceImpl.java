@@ -10,8 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.util.Base64;
 import java.util.List;
 
@@ -138,6 +137,20 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
             System.out.println("Image file saved");
         }catch(Exception e){
             System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public byte[] loadImage(String fileName) throws IOException {
+        File file = new File( "images/Desa/" + fileName);
+        try {
+            FileInputStream fileInputStreamReader = new FileInputStream(file);
+            byte[] bytes = new byte[(int)file.length()];
+            fileInputStreamReader.read(bytes);
+
+            return bytes;
+        } catch (IOException e) {
+            throw new FileNotFoundException(e.getMessage());
         }
     }
 }
