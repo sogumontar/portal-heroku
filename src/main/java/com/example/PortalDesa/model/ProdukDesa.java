@@ -26,7 +26,7 @@ public class ProdukDesa {
     Integer harga;
 
     @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_GAMBAR)
-    String gambar;
+    String gambar = "Default.jpg";
 
     @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_DESKRIPSI)
     String deskripsi;

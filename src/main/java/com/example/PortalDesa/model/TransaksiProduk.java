@@ -36,7 +36,7 @@ public class TransaksiProduk {
     String metode;
 
     @Column(name = FieldForTransaksi.FIELD_RESI)
-    String resi;
+    String resi = "Default.jpg";
 
     @Column(name = FieldForTransaksi.FIELD_STATUS)
     Integer status;

@@ -36,7 +36,7 @@ public class Desa  {
     public KecamatanDefaults kecamatan;
 
     @Column(name = GlobalFieldConstant.FIELD_GAMBAR)
-    public String gambar;
+    public String gambar ="Default.jpg";
 
     @Column(name = FieldForTableDesa.FIELD_STATUS)
     public int status;

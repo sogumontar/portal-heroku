@@ -9,7 +9,7 @@ public enum  KecamatanDefaults {
     BonatuaLunasi,
     Borbor,
     Habinsaran,
-    Lagiboti,
+    Laguboti,
     LumbanJulu,
     Nassau,
     Parmaksian,

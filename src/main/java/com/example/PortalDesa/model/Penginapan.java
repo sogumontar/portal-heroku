@@ -30,7 +30,7 @@ public class Penginapan {
     @Column(name = FieldForTablePenginapan.FIELD_LOKASI_PENGINAPAN)
     String lokasi;
     @Column(name = FieldForTablePenginapan.FIELD_GAMBAR_PENGINAPAN)
-    String gambar;
+    String gambar = "Default.jpg";
     @Column(name = FieldForTablePenginapan.FIELD_DESA)
     String desa;
     @Column(name = FieldForTablePenginapan.FIELD_KECAMATAN)
