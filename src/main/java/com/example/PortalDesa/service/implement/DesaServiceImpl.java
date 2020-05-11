@@ -2,6 +2,7 @@ package com.example.PortalDesa.service.implement;
 
 import com.example.PortalDesa.model.Desa;
 import com.example.PortalDesa.model.Users;
+import com.example.PortalDesa.model.constant.PathImageDb;
 import com.example.PortalDesa.model.defaults.KecamatanDefaults;
 import com.example.PortalDesa.payload.CreateResponse;
 import com.example.PortalDesa.payload.request.DesaRequest;
@@ -51,7 +52,14 @@ public class DesaServiceImpl implements DesaService {
     @Override
     public void updateDesa(String sku,DesaRequest desaRequest) {
         System.out.println(sku);
-        desaRepo.updateBySku(sku,desaRequest.getNama(),desaRequest.getNamaKepalaDesa(),KecamatanDefaults.valueOf(desaRequest.getKecamatan()),desaRequest.getJumlahPenduduk(),sku+".png");
+        desaRepo.updateBySku(
+                sku,
+                desaRequest.getNama(),
+                desaRequest.getNamaKepalaDesa(),
+                KecamatanDefaults.valueOf(desaRequest.getKecamatan()),
+                desaRequest.getJumlahPenduduk(),
+                PathImageDb.PATH_FOR_IMAGE_DESA+sku+".png"
+        );
     }
 
     @Override

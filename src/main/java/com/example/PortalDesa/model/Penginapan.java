@@ -1,6 +1,7 @@
 package com.example.PortalDesa.model;
 
 import com.example.PortalDesa.model.constant.FieldForTablePenginapan;
+import com.example.PortalDesa.model.constant.PathImageDb;
 import com.example.PortalDesa.model.constant.TablesConstant;
 import lombok.NoArgsConstructor;
 
@@ -30,7 +31,7 @@ public class Penginapan {
     @Column(name = FieldForTablePenginapan.FIELD_LOKASI_PENGINAPAN)
     String lokasi;
     @Column(name = FieldForTablePenginapan.FIELD_GAMBAR_PENGINAPAN)
-    String gambar = "Default.jpg";
+    String gambar = PathImageDb.PATH_FOR_IMAGE_PENGINAPAN+"Default.jpg";
     @Column(name = FieldForTablePenginapan.FIELD_DESA)
     String desa;
     @Column(name = FieldForTablePenginapan.FIELD_KECAMATAN)

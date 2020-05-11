@@ -1,6 +1,7 @@
 package com.example.PortalDesa.service.implement;
 
 import com.example.PortalDesa.model.Penginapan;
+import com.example.PortalDesa.model.constant.PathImageDb;
 import com.example.PortalDesa.model.sequence.SequenceProduk;
 import com.example.PortalDesa.payload.request.PenginapanRequest;
 import com.example.PortalDesa.repository.PenginapanRepo;
@@ -40,7 +41,7 @@ public class PenginapanServiceImpl implements PenginapanService {
                 request.getDeskripsi(),
                 request.getJumlahKamar(),
                 request.getLokasi(),
-                request.getGambar(),
+                PathImageDb.PATH_FOR_IMAGE_PENGINAPAN+request.getGambar(),
                 request.getDesa(),
                 request.getKecamatan(),
                 1
@@ -81,7 +82,17 @@ public class PenginapanServiceImpl implements PenginapanService {
 
     @Override
     public void updateWithGambar(String sku, PenginapanRequest request) {
-        penginapanRepo.updateWithGambar(sku, request.getNama(), request.getHarga(), request.getDeskripsi(), request.getJumlahKamar(), request.getLokasi(), request.getGambar(), request.getDesa(), request.getKecamatan());
+        penginapanRepo.updateWithGambar(
+                sku,
+                request.getNama(),
+                request.getHarga(),
+                request.getDeskripsi(),
+                request.getJumlahKamar(),
+                request.getLokasi(),
+                PathImageDb.PATH_FOR_IMAGE_PENGINAPAN + request.getGambar(),
+                request.getDesa(),
+                request.getKecamatan()
+        );
     }
 
     @Override

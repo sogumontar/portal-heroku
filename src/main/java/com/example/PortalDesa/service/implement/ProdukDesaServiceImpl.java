@@ -1,6 +1,7 @@
 package com.example.PortalDesa.service.implement;
 
 import com.example.PortalDesa.model.ProdukDesa;
+import com.example.PortalDesa.model.constant.PathImageDb;
 import com.example.PortalDesa.model.sequence.SequenceProduk;
 import com.example.PortalDesa.payload.request.ProdukDesaRequest;
 import com.example.PortalDesa.repository.ProdukDesaRepo;
@@ -52,12 +53,12 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         Integer val = produkDesaRepo.counter(request.getSkuDesa());
         System.out.println(val);
         val++;
-        String pict =request.getSkuDesa()+"-"+val.toString()+".png";
+        String pict = request.getSkuDesa()+"-"+val.toString()+".png";
         ProdukDesa produkDesa = new ProdukDesa(
                 skuGenerator(request.getNama(), request.getSkuDesa()),
                 request.getNama(),
                 request.getHarga(),
-                pict,
+                PathImageDb.PATH_FOR_IMAGE_PRODUK_DESA+pict,
                 request.getDeskripsi(),
                 request.getSkuDesa(),
                 1
@@ -83,13 +84,24 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
     @Override
     @Transactional
     public void updateProduk(String sku, ProdukDesaRequest request) {
-        produkDesaRepo.updateBySku(sku, request.getNama(), request.getHarga(), request.getDeskripsi());
+        produkDesaRepo.updateBySku(
+                sku,
+                request.getNama(),
+                request.getHarga(),
+                request.getDeskripsi()
+        );
     }
 
     @Override
     @Transactional
     public void updateProdukWithGambar(String sku, ProdukDesaRequest request) {
-        produkDesaRepo.updateBySkuWithGambar(sku, request.getNama(), request.getHarga(), request.getDeskripsi(), request.getGambar());
+        produkDesaRepo.updateBySkuWithGambar(
+                sku,
+                request.getNama(),
+                request.getHarga(),
+                request.getDeskripsi(),
+                PathImageDb.PATH_FOR_IMAGE_PRODUK_DESA+request.getGambar()
+        );
     }
 
     @Override

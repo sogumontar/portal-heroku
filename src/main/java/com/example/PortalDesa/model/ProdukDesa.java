@@ -1,6 +1,7 @@
 package com.example.PortalDesa.model;
 
 import com.example.PortalDesa.model.constant.FieldForProdukDesa;
+import com.example.PortalDesa.model.constant.PathImageDb;
 import com.example.PortalDesa.model.constant.TablesConstant;
 import lombok.NoArgsConstructor;
 
@@ -26,7 +27,7 @@ public class ProdukDesa {
     Integer harga;
 
     @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_GAMBAR)
-    String gambar = "Default.jpg";
+    String gambar = PathImageDb.PATH_FOR_IMAGE_PRODUK_DESA+"Default.jpg";
 
     @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_DESKRIPSI)
     String deskripsi;

@@ -1,6 +1,7 @@
 package com.example.PortalDesa.model;
 
 import com.example.PortalDesa.model.constant.FieldForTransaksi;
+import com.example.PortalDesa.model.constant.PathImageDb;
 import com.example.PortalDesa.model.constant.TablesConstant;
 import lombok.NoArgsConstructor;
 
@@ -36,7 +37,7 @@ public class TransaksiProduk {
     String metode;
 
     @Column(name = FieldForTransaksi.FIELD_RESI)
-    String resi = "Default.jpg";
+    String resi = PathImageDb.PATH_FOR_IMAGE_TRANSAKSI+"Default.jpg";
 
     @Column(name = FieldForTransaksi.FIELD_STATUS)
     Integer status;
