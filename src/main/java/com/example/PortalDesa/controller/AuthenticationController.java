@@ -2,6 +2,7 @@ package com.example.PortalDesa.controller;
 
 import com.example.PortalDesa.controller.route.AuthenticationControllerRoute;
 import com.example.PortalDesa.model.Users;
+import com.example.PortalDesa.payload.DefaultResponse;
 import com.example.PortalDesa.payload.request.LoginRequest;
 import com.example.PortalDesa.payload.request.RegisterRequest;
 import com.example.PortalDesa.security.JwtTokenProvider;
@@ -57,8 +58,8 @@ public class AuthenticationController {
     @PutMapping(AuthenticationControllerRoute.ROUTE_UPDATE_BY_SKU)
     public ResponseEntity<?> update( @RequestBody Users request, @PathVariable String sku) {
         if(authenticationService.updateUser(request,sku)){
-            return ResponseEntity.ok(authenticationService.updateUser(request,sku));
+            return ResponseEntity.ok(new DefaultResponse("Sku anda salah",201));
         }
-        return ResponseEntity.badRequest().body("Sku anda salah");
+        return ResponseEntity.badRequest().body(new DefaultResponse("Sku anda salah",400));
     }
 }
