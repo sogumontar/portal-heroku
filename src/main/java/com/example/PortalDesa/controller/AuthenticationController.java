@@ -54,5 +54,11 @@ public class AuthenticationController {
         return authenticationService.login(loginRequest);
     }
 
-
+    @PutMapping(AuthenticationControllerRoute.ROUTE_UPDATE_BY_SKU)
+    public ResponseEntity<?> update( @RequestBody Users request, @PathVariable String sku) {
+        if(authenticationService.updateUser(request,sku)){
+            return ResponseEntity.ok(authenticationService.updateUser(request,sku));
+        }
+        return ResponseEntity.badRequest().body("Sku anda salah");
+    }
 }

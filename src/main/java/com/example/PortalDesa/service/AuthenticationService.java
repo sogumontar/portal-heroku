@@ -1,8 +1,10 @@
 package com.example.PortalDesa.service;
 
 import com.example.PortalDesa.model.Roles;
+import com.example.PortalDesa.model.Users;
 import com.example.PortalDesa.payload.request.LoginRequest;
 import com.example.PortalDesa.payload.request.RegisterRequest;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -26,4 +28,6 @@ public interface AuthenticationService {
     String sub_str(String str);
 
     Boolean checkPassword(String password, String confirmPassword);
+
+    Boolean updateUser(Users users,String sku);
 }

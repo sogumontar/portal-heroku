@@ -173,6 +173,18 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
+    public Boolean updateUser(Users users, String sku) {
+        String nama=users.getName();
+        String alamat= users.getAlamat();
+        String email= users.getEmail();
+        System.out.println(usersRepo.updateBysku(sku, nama,email,alamat));
+        if(usersRepo.updateBysku(sku, nama,email,alamat)==1){
+            return Boolean.TRUE;
+        }
+        return false;
+    }
+
+    @Override
     public Roles checkRole(String role){
 
         Roles roles;
