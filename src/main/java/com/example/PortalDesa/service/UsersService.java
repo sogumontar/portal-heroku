@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface UsersService {
     public Users findByUsername(String username);
+    public Users findBySku(String sku);
     public List findAllAccountCustomer();
     public List findAllAccountMerchant();
     public List findAllAccountAdmin();

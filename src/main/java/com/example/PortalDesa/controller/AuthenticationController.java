@@ -34,9 +34,14 @@ public class AuthenticationController {
     @Autowired
     UsersServiceImpl usersService;
 
-    @GetMapping("/test/{username}")
+    @GetMapping(AuthenticationControllerRoute.ROUTE_FIND_BY_USERNAME)
     public Users findwithUsername(@PathVariable String username){
         return usersService.findByUsername(username);
+    }
+
+    @GetMapping(AuthenticationControllerRoute.ROUTE_FIND_BY_SKU)
+    public Users findwithSku(@PathVariable String sku){
+        return usersService.findBySku(sku);
     }
 
     @PostMapping(AuthenticationControllerRoute.ROUTE_SIGN_UP)
@@ -48,5 +53,6 @@ public class AuthenticationController {
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest loginRequest) {
         return authenticationService.login(loginRequest);
     }
+
 
 }

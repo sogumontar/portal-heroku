@@ -35,6 +35,9 @@ public class ProdukDesa {
     @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_SKU_DESA)
     String skuDesa;
 
+    @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_JUMLAH_PEMBELIAN)
+    Integer jumlahPembelian;
+
     @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_STATUS)
     Integer status;
 
@@ -47,6 +50,14 @@ public class ProdukDesa {
         this.deskripsi = deskripsi;
         this.skuDesa = skuDesa;
         this.status = status;
+    }
+
+    public Integer getJumlahPembelian() {
+        return jumlahPembelian;
+    }
+
+    public void setJumlahPembelian(Integer jumlahPembelian) {
+        this.jumlahPembelian = jumlahPembelian;
     }
 
     public String getSkuDesa() {

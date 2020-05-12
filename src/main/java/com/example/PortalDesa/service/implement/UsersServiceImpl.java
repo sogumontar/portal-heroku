@@ -23,6 +23,11 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
+    public Users findBySku(String sku) {
+        return usersRepo.findFirstBySku(sku);
+    }
+
+    @Override
     public List findAllAccountCustomer() {
         return usersRepo.findAllByRoles(1);
     }

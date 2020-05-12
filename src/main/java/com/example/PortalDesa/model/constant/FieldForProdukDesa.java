@@ -11,5 +11,6 @@ public interface FieldForProdukDesa {
     public String FIELD_PRODUK_DESA_STATUS = "status";
     public String FIELD_PRODUK_DESA_NAMA_DESA = "nama_desa";
     public String FIELD_PRODUK_DESA_SKU_DESA = "sku_desa";
+    public String FIELD_PRODUK_DESA_JUMLAH_PEMBELIAN = "jumlah_pembelian";
 
 }
