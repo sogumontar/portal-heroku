@@ -10,14 +10,14 @@ public class ProdukDesaRequest {
     String nama;
     Integer harga;
     String deskripsi;
-//    String gambar;
+    String gambar;
     String skuDesa;
 
-    public ProdukDesaRequest(String nama, Integer harga, String deskripsi, String skuDesa) {
+    public ProdukDesaRequest(String nama, Integer harga, String deskripsi, String gambar, String skuDesa) {
         this.nama = nama;
         this.harga = harga;
         this.deskripsi = deskripsi;
-//        this.gambar = gambar;
+        this.gambar = gambar;
         this.skuDesa = skuDesa;
     }
 
@@ -35,6 +35,13 @@ public class ProdukDesaRequest {
         this.skuDesa = skuDesa;
     }
 
+    public String getGambar() {
+        return gambar;
+    }
+
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
+    }
 
     public String getNama() {
         return nama;
