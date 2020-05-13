@@ -92,17 +92,17 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         );
     }
 
-    @Override
-    @Transactional
-    public void updateProdukWithGambar(String sku, ProdukDesaRequest request) {
-        produkDesaRepo.updateBySkuWithGambar(
-                sku,
-                request.getNama(),
-                request.getHarga(),
-                request.getDeskripsi(),
-                PathImageDb.PATH_FOR_IMAGE_PRODUK_DESA+request.getGambar()
-        );
-    }
+//    @Override
+//    @Transactional
+//    public void updateProdukWithGambar(String sku, ProdukDesaRequest request) {
+//        produkDesaRepo.updateBySkuWithGambar(
+//                sku,
+//                request.getNama(),
+//                request.getHarga(),
+//                request.getDeskripsi(),
+//                PathImageDb.PATH_FOR_IMAGE_PRODUK_DESA+request.getGambar()
+//        );
+//    }
 
     @Override
     @Transactional
