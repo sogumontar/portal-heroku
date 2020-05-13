@@ -16,6 +16,10 @@ import java.util.List;
 public interface PenginapanRepo extends JpaRepository<Penginapan, String> {
     @Query("SELECT p  FROM Penginapan p WHERE p.status=1")
     List findAll();
+
+    @Query("SELECT p  FROM Penginapan p WHERE p.status=1 AND p.skuMerchant LIKE ?1")
+    List findAllBySkuMerchant(String skuMerchant);
+
     Penginapan findFirstBySku(String sku);
 
     @Transactional
@@ -42,4 +46,7 @@ public interface PenginapanRepo extends JpaRepository<Penginapan, String> {
     @Modifying
     @Query("UPDATE Penginapan p  SET p.status=1 WHERE p.sku LIKE ?1")
     void activatePenginapan(String sku);
+
+    @Query("SELECT COUNT(u.sku) FROM Penginapan u WHERE u.sku LIKE ?1 ")
+    Integer counter (String skuDesa);
 }

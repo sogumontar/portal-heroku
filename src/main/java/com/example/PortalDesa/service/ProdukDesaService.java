@@ -37,6 +37,5 @@ public interface ProdukDesaService {
 
     public void addGambarDesa(String base64, String sku);
 
-    byte[] loadImage(String fileName) throws IOException;
 
 }

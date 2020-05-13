@@ -3,6 +3,7 @@ package com.example.PortalDesa.service;
 import com.example.PortalDesa.model.Penginapan;
 import com.example.PortalDesa.payload.request.PenginapanRequest;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -12,6 +13,8 @@ public interface PenginapanService {
     void activate(String sku);
 
     List findAll();
+
+    List findAllBySku(String sku);
 
     void save(PenginapanRequest request);
 
@@ -28,4 +31,8 @@ public interface PenginapanService {
     void deleteBySku(String sku);
 
     void suspendBySku(String sku);
+
+    public void addGambarDesa(String base64, String sku);
+
+    byte[] loadImage(String fileName) throws IOException;
 }

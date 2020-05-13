@@ -36,10 +36,12 @@ public class Penginapan {
     String desa;
     @Column(name = FieldForTablePenginapan.FIELD_KECAMATAN)
     String kecamatan;
+    @Column(name = FieldForTablePenginapan.FIELD_SKU_MERCHANT)
+    String skuMerchant;
     @Column(name = FieldForTablePenginapan.FIELD_STATUS)
     Integer status;
 
-    public Penginapan(String sku, String nama, Integer harga, String deskripsi, Integer jumlahKamar, String lokasi, String gambar, String desa, String kecamatan, Integer status) {
+    public Penginapan(String sku, String nama, Integer harga, String deskripsi, Integer jumlahKamar, String lokasi, String gambar, String desa, String kecamatan, String skuMerchant ,Integer status) {
         this.sku = sku;
         this.nama = nama;
         this.harga = harga;
@@ -49,7 +51,16 @@ public class Penginapan {
         this.gambar = gambar;
         this.desa = desa;
         this.kecamatan = kecamatan;
+        this.skuMerchant = skuMerchant;
         this.status = status;
+    }
+
+    public String getSkuMerchant() {
+        return skuMerchant;
+    }
+
+    public void setSkuMerchant(String skuMerchant) {
+        this.skuMerchant = skuMerchant;
     }
 
     public String getGambar() {

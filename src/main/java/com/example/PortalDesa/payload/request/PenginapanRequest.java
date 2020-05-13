@@ -15,8 +15,9 @@ public class PenginapanRequest {
     String gambar;
     String desa;
     String kecamatan;
+    String skumerchant;
 
-    public PenginapanRequest(String nama, Integer harga, String deskripsi, Integer jumlahKamar, String lokasi, String desa, String kecamatan) {
+    public PenginapanRequest(String nama, Integer harga, String deskripsi, Integer jumlahKamar, String lokasi, String desa, String kecamatan, String skuMerchant) {
         this.nama = nama;
         this.harga = harga;
         this.deskripsi = deskripsi;
@@ -24,17 +25,16 @@ public class PenginapanRequest {
         this.lokasi = lokasi;
         this.desa = desa;
         this.kecamatan = kecamatan;
+        this.skumerchant = skuMerchant;
     }
 
-    public PenginapanRequest(String nama, Integer harga, String deskripsi, Integer jumlahKamar, String lokasi, String gambar, String desa, String kecamatan) {
-        this.nama = nama;
-        this.harga = harga;
-        this.deskripsi = deskripsi;
-        this.jumlahKamar = jumlahKamar;
-        this.lokasi = lokasi;
-        this.gambar = gambar;
-        this.desa = desa;
-        this.kecamatan = kecamatan;
+
+    public String getSkumerchant() {
+        return skumerchant;
+    }
+
+    public void setSkumerchant(String skumerchant) {
+        this.skumerchant = skumerchant;
     }
 
     public String getGambar() {

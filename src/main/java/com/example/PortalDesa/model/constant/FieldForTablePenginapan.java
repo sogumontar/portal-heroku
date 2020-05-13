@@ -13,4 +13,5 @@ public interface FieldForTablePenginapan {
     public String FIELD_DESA = "desa";
     public String FIELD_KECAMATAN = "kecamatan";
     public String FIELD_STATUS = "status";
+    public String FIELD_SKU_MERCHANT = "sku_merchant";
 }
