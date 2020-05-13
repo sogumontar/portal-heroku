@@ -21,7 +21,7 @@ public interface ProdukDesaRepo extends JpaRepository<ProdukDesa, String> {
 
     public ProdukDesa findFirstBySku(String sku);
 
-    @Query("SELECT p FROM ProdukDesa p WHERE p.status =1 AND p.sku LIKE ?1 ")
+    @Query("SELECT p FROM ProdukDesa p WHERE p.status =1 AND p.skuDesa LIKE ?1 ")
     List findAllBySkuAdmin(String skuAdmin);
 
     @Modifying
