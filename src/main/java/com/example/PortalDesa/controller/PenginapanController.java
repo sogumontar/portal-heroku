@@ -89,7 +89,7 @@ public class PenginapanController {
     @PostMapping(PenginapanControllerRoute.ROUTE_ADD_GAMBAR)
     public ResponseEntity<?> addGambarDesa(@RequestBody PenginapanRequest request){
         penginapanService.addGambarDesa(request.getGambar(),request.getNama());
-        return ResponseEntity.ok("");
+        return ResponseEntity.ok(new DefaultResponse("Activate Gambar Success",200));
     }
 
 }

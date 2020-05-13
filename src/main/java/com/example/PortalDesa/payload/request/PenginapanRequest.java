@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
  * Created by Sogumontar Hendra Simangunsong on 21/04/2020.
  */
 @NoArgsConstructor
-public class    PenginapanRequest {
+public class PenginapanRequest {
     String nama;
     Integer harga;
     String deskripsi;
