@@ -85,7 +85,7 @@ public class PenginapanServiceImpl implements PenginapanService {
 
     @Override
     public void update(String sku, PenginapanRequest request) {
-        penginapanRepo.updateBySku(sku, request.getNama(), request.getHarga(), request.getDeskripsi(), request.getJumlahKamar(), request.getLokasi(), request.getDesa(), request.getKecamatan());
+        penginapanRepo.updateBySku(sku, request.getNama(), request.getHarga(), request.getDeskripsi(), request.getJumlahKamar(), request.getLokasi());
     }
 
     @Override
