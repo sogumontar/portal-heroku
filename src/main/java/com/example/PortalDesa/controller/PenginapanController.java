@@ -34,7 +34,7 @@ public class PenginapanController {
         return ResponseEntity.ok(penginapanService.findAll());
     }
 
-    @GetMapping(PenginapanControllerRoute.ROUTE_PENGINAPAN_ALL)
+    @GetMapping(PenginapanControllerRoute.ROUTE_GET_ALL_BY_MERCHANT)
     public ResponseEntity<?> findAllBySkuMerchant(@PathVariable String sku) {
         return ResponseEntity.ok(penginapanService.findAllBySku(sku));
     }
