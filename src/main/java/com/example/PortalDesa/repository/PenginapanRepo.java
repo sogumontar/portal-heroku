@@ -47,6 +47,6 @@ public interface PenginapanRepo extends JpaRepository<Penginapan, String> {
     @Query("UPDATE Penginapan p  SET p.status=1 WHERE p.sku LIKE ?1")
     void activatePenginapan(String sku);
 
-    @Query("SELECT COUNT(u.sku) FROM Penginapan u WHERE u.sku LIKE ?1 ")
+    @Query("SELECT COUNT(u.sku) FROM Penginapan u WHERE u.skuMerchant LIKE ?1 ")
     Integer counter (String skuDesa);
 }

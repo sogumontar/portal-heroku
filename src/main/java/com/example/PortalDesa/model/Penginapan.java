@@ -19,7 +19,6 @@ import javax.persistence.Table;
 public class Penginapan {
     @Id
     String sku;
-
     @Column(name = FieldForTablePenginapan.FIELD_NAMA_PENGINAPAN)
     String nama;
     @Column(name = FieldForTablePenginapan.FIELD_HARGA_PENGINAPAN)

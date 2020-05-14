@@ -41,6 +41,10 @@ public class PenginapanServiceImpl implements PenginapanService {
 
     @Override
     public void save(PenginapanRequest request) {
+        Integer val = penginapanRepo.counter(request.getSkumerchant());
+        System.out.println(val);
+        val++;
+        String pict = request.getSkumerchant()+"-"+val.toString()+".png";
         Penginapan penginapan = new Penginapan(
                 skuGenereator(request.getDesa(), request.getNama()),
                 request.getNama(),
