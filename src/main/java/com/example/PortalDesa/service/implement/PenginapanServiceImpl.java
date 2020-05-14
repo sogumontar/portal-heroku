@@ -52,7 +52,7 @@ public class PenginapanServiceImpl implements PenginapanService {
                 request.getDeskripsi(),
                 request.getJumlahKamar(),
                 request.getLokasi(),
-                PathImageDb.PATH_FOR_IMAGE_PENGINAPAN+request.getGambar(),
+                PathImageDb.PATH_FOR_IMAGE_PENGINAPAN+pict,
                 request.getDesa(),
                 request.getKecamatan(),
                 request.getSkumerchant(),
