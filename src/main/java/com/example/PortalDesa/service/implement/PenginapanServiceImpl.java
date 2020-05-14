@@ -131,7 +131,7 @@ public class PenginapanServiceImpl implements PenginapanService {
         if (base64.contains(partSeparator)) {
             encodedImg = base64.split(partSeparator)[1];
         }
-        File file =new File(currentDir+"/"+pict);
+        File file =new File(currentDir+"/"+"gambar.png");
         try(FileOutputStream fos = new FileOutputStream(file)){
             byte[] decoder = Base64.getDecoder().decode(encodedImg);
             fos.write(decoder);
