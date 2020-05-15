@@ -2,6 +2,7 @@ package com.example.PortalDesa.controller;
 
 import com.example.PortalDesa.controller.route.CustomerControllerRoute;
 import com.example.PortalDesa.model.CustomerAddress;
+import com.example.PortalDesa.payload.DefaultResponse;
 import com.example.PortalDesa.repository.AlamatCustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -34,12 +35,13 @@ public class CustomerController {
 
     @PostMapping(CustomerControllerRoute.ROUTE_FOR_CUSTOMER_CONTROLLER_ADD)
     public ResponseEntity<?> add(@RequestBody CustomerAddress customerAddress){
-        return ResponseEntity.ok(alamatCustomerRepo.save(customerAddress));
+        alamatCustomerRepo.save(customerAddress);
+        return ResponseEntity.ok(new DefaultResponse("add alamat sukses",200));
     }
 
     @PutMapping(CustomerControllerRoute.ROUTE_FOR_CUSTOMER_CONTROLLER_UPDATE_BY_SKU)
     public ResponseEntity<?> update(@PathVariable String sku ,@RequestBody CustomerAddress customerAddress){
         alamatCustomerRepo.update(customerAddress.getAlamat(),customerAddress.getSku());
-        return ResponseEntity.ok("Update Success");
+        return ResponseEntity.ok(new DefaultResponse("Update Success",200));
     }
 }
