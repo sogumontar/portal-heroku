@@ -23,7 +23,7 @@ public interface KeranjangRepo extends JpaRepository<Keranjang,String> {
     @Query("SELECT k from Keranjang k where k.status=1 AND  k.skuDesa LIKE ?1")
     List findAllByMerchant(String skuDesa);
 
-    @Query("SELECT COUNT(k.id) from Keranjang k where k.idProduk LIKE ?2 AND  k.idCustomer LIKE ?1 AND k.status=1")
+    @Query("SELECT COUNT(k.id) from Keranjang k where k.idProduk LIKE ?1 AND  k.idCustomer LIKE ?2 AND k.status=1")
     Integer check(String idProduk, String skuCustomer);
 
     @Transactional
