@@ -43,6 +43,7 @@ public class TransaksiController {
     public ResponseEntity<?> add( @RequestBody TransaksiProduk transaksiProduk){
         System.out.println(transaksiProduk);
         transaksiService.save(transaksiProduk,2);
+        transaksiService.updateCart(transaksiProduk.getSkuCustomer());
         return ResponseEntity.ok("Transaction Success");
     }
     @PostMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_ADD_CART)

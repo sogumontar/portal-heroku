@@ -1,6 +1,7 @@
 package com.example.PortalDesa.service.implement;
 
 import com.example.PortalDesa.model.TransaksiProduk;
+import com.example.PortalDesa.repository.KeranjangRepo;
 import com.example.PortalDesa.repository.TransaksiProdukRepo;
 import com.example.PortalDesa.service.TransaksiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,10 @@ public class TransaksiServiceImpl implements TransaksiService {
 
     @Autowired
     TransaksiProdukRepo transaksiProdukRepo;
+
+    @Autowired
+    KeranjangRepo keranjangRepo;
+
     @Override
     public void save(TransaksiProduk transaksiProduk, Integer status) {
         TransaksiProduk transaksiProduk1 = new TransaksiProduk(
@@ -53,5 +58,10 @@ public class TransaksiServiceImpl implements TransaksiService {
             System.out.println(e.getMessage());
         }
         transaksiProdukRepo.update(idpesanan,pict);
+    }
+
+    @Override
+    public void updateCart(String skuUser) {
+        keranjangRepo.updateKeranjang(skuUser);
     }
 }

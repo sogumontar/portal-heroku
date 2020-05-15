@@ -10,4 +10,5 @@ import org.springframework.stereotype.Service;
 public interface TransaksiService {
     public void save(TransaksiProduk transaksiProduk,Integer status);
     public void update(String idPesanan,String idCustomer, String base64);
+    public void updateCart(String idCart);
 }

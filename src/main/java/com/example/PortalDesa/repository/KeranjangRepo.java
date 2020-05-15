@@ -28,6 +28,11 @@ public interface KeranjangRepo extends JpaRepository<Keranjang,String> {
 
     @Transactional
     @Modifying
+    @Query("UPDATE Keranjang k set k.status=3 where k.idCustomer LIKE ?1")
+    void updateKeranjang(String sku);
+
+    @Transactional
+    @Modifying
     @Query("UPDATE Keranjang k set k.jumlah=?2 where k.id LIKE ?1")
     Integer update(String id, Integer jumlah);
 

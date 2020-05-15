@@ -24,6 +24,11 @@ public class CustomerController {
 
     @GetMapping(CustomerControllerRoute.ROUTE_FOR_CUSTOMER_CONTROLLER_FIND_ALL_BY_SKU)
     public ResponseEntity<?> findBySku(@PathVariable String sku){
+        CustomerAddress customerAddress = new CustomerAddress();
+        customerAddress=alamatCustomerRepo.findFirstBySku(sku);
+        if(customerAddress==null){
+            return ResponseEntity.badRequest().body("error");
+        }
         return ResponseEntity.ok(alamatCustomerRepo.findFirstBySku(sku));
     }
 
