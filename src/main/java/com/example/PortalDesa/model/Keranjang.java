@@ -38,12 +38,24 @@ public class Keranjang {
     @Column(name = FieldForKeranjang.FIELD_KERANJANG_STATUS)
     Integer status;
 
-    public Keranjang( String idCustomer, String idProduk, Integer jumlah, String skuDesa, Integer status) {
+    @Column(name = FieldForKeranjang.FIELD_KERANJANG_HARGA)
+    Integer harga;
+
+    public Keranjang( String idCustomer, String idProduk, Integer jumlah, String skuDesa, Integer status, Integer harga) {
         this.idCustomer = idCustomer;
         this.idProduk = idProduk;
         this.jumlah = jumlah;
         this.skuDesa = skuDesa;
         this.status = status;
+        this.harga=harga;
+    }
+
+    public Integer getHarga() {
+        return harga;
+    }
+
+    public void setHarga(Integer harga) {
+        this.harga = harga;
     }
 
     public String getId() {

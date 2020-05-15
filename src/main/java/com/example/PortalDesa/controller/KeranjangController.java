@@ -47,7 +47,8 @@ public class KeranjangController {
                 keranjang.getIdProduk(),
                 keranjang.getJumlah(),
                 keranjang.getSkuDesa(),
-                1
+                1,
+                keranjang.getHarga()
         );
         keranjangRepo.save(keranjang1);
         return ResponseEntity.ok(new DefaultResponse("Success", 201));

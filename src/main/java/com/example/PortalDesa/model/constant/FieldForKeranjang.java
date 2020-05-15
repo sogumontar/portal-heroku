@@ -9,4 +9,5 @@ public interface FieldForKeranjang {
     public String FIELD_KERANJANG_JUMLAH = "jumlah";
     public String FIELD_KERANJANG_STATUS = "status";
     public String FIELD_KERANJANG_SKU_DESA = "sku_desa";
+    public String FIELD_KERANJANG_HARGA = "harga";
 }
