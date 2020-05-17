@@ -3,6 +3,7 @@ package com.example.PortalDesa.controller;
 import com.example.PortalDesa.controller.route.ProdukDesaControllerRoute;
 import com.example.PortalDesa.controller.route.TransaksiControllerRoute;
 import com.example.PortalDesa.model.TransaksiProduk;
+import com.example.PortalDesa.payload.DefaultResponse;
 import com.example.PortalDesa.repository.TransaksiProdukRepo;
 import com.example.PortalDesa.service.TransaksiService;
 import com.example.PortalDesa.service.implement.StorageServiceImpl;
@@ -36,7 +37,7 @@ public class TransaksiController {
     public ResponseEntity<?> update(@PathVariable  String idPesanan, @RequestBody TransaksiProduk transaksiProduk){
         System.out.println(idPesanan +"    "+transaksiProduk.getSkuCustomer()+"     "+transaksiProduk.getResi());
         transaksiService.update(idPesanan,transaksiProduk.getSkuCustomer(),transaksiProduk.getResi());
-        return ResponseEntity.ok("");
+        return ResponseEntity.ok(new DefaultResponse("update sukses",200));
     }
 
     @PostMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_ADD)
@@ -44,12 +45,12 @@ public class TransaksiController {
         System.out.println(transaksiProduk);
         transaksiService.save(transaksiProduk,2);
         transaksiService.updateCart(transaksiProduk.getSkuCustomer());
-        return ResponseEntity.ok("Transaction Success");
+        return ResponseEntity.ok(new DefaultResponse("Transaction Success",200));
     }
     @PostMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_ADD_CART)
     public ResponseEntity<?> addToCart( @RequestBody TransaksiProduk transaksiProduk){
         transaksiService.save(transaksiProduk,1);
-        return ResponseEntity.ok("Add To Cart Success");
+        return ResponseEntity.ok(new DefaultResponse("Add To Cart Success",200));
     }
 
     @GetMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_FIND_ALL_CART_BY_SKU)

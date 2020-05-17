@@ -2,6 +2,7 @@ package com.example.PortalDesa.controller;
 
 import com.example.PortalDesa.controller.route.ProdukDesaControllerRoute;
 import com.example.PortalDesa.model.ProdukDesa;
+import com.example.PortalDesa.payload.DefaultResponse;
 import com.example.PortalDesa.payload.request.ProdukDesaRequest;
 import com.example.PortalDesa.service.StorageService;
 import com.example.PortalDesa.service.implement.ProdukDesaServiceImpl;
@@ -51,37 +52,37 @@ public class ProdukDesaController {
     @PostMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ADD)
     public ResponseEntity<?> addProdukDesa(@RequestBody ProdukDesaRequest request) {
         produkDesaService.save(request);
-        return ResponseEntity.ok("Add Produk Success");
+        return ResponseEntity.ok(new DefaultResponse("Add Produk Success",200));
     }
 
     @PostMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ADD_GAMBAR)
     public ResponseEntity<?> addGambarDesa(@RequestBody ProdukDesaRequest request){
         produkDesaService.addGambarDesa(request.getGambar(),request.getNama());
-        return ResponseEntity.ok("");
+        return ResponseEntity.ok(new DefaultResponse("add gambar sukses",200));
     }
 
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_UPDATE)
     public ResponseEntity<?> updateProdukDesa(@RequestBody ProdukDesaRequest request, @PathVariable String sku) {
         produkDesaService.updateProduk(sku, request);
-        return ResponseEntity.ok("Update Produk Success");
+        return ResponseEntity.ok(new DefaultResponse("Update Produk Success",200));
     }
 
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_UPDATE_WITH_GAMBAR)
     public ResponseEntity<?> updateProdukDesaWithGambar(@RequestBody ProdukDesaRequest request, @PathVariable String sku) {
         produkDesaService.updateProduk(sku, request);
-        return ResponseEntity.ok("Update Produk Success");
+        return ResponseEntity.ok(new DefaultResponse("Update Produk Success",200));
     }
 
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_SUSPEND)
     public ResponseEntity<?> suspendProduk(@PathVariable String sku) {
         produkDesaService.suspendProduk(sku);
-        return ResponseEntity.ok("Suspend Produk Success");
+        return ResponseEntity.ok(new DefaultResponse("Suspend Produk Success",200));
     }
 
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_DELETE)
     public ResponseEntity<?> deleteProduk(@PathVariable String sku) {
         produkDesaService.deleteProduk(sku);
-        return ResponseEntity.ok("Delete Produk Success");
+        return ResponseEntity.ok(new DefaultResponse("Delete Produk Success",200));
     }
 
     @CrossOrigin
@@ -94,7 +95,7 @@ public class ProdukDesaController {
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ACTIVATE_BY_SKU)
     public ResponseEntity<?> activate(@PathVariable String sku) {
         produkDesaService.activate(sku);
-        return ResponseEntity.ok("Activate Success");
+        return ResponseEntity.ok(new DefaultResponse("Activate Success",200));
     }
 
     @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_IMAGE_GET_BY_NAME)
