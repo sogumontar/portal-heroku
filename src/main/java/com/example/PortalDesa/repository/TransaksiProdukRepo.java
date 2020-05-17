@@ -14,11 +14,11 @@ import java.util.List;
  */
 @Repository
 public interface TransaksiProdukRepo extends JpaRepository<TransaksiProduk,String> {
-    @Query("SELECT p.skuProduk, p.skuCustomer , p.alamat, p.harga , p.metode, d.nama, d.skuDesa, d.gambar, p.id FROM TransaksiProduk p, ProdukDesa d WHERE p.skuProduk LIKE d.sku AND p.status =1 AND p.skuCustomer LIKE ?1")
+    @Query("SELECT p FROM TransaksiProduk p, ProdukDesa d WHERE p.skuProduk LIKE d.sku AND p.status =1 AND p.skuCustomer LIKE ?1")
     public List findAllCartBySku(String sku);
-    @Query("SELECT p.skuProduk, p.skuCustomer , p.alamat, p.harga , p.metode, d.nama, d.skuDesa, d.gambar, p.id FROM TransaksiProduk p, ProdukDesa d WHERE p.skuProduk LIKE d.sku AND p.status =2 AND p.skuCustomer LIKE ?1")
+    @Query("SELECT p FROM TransaksiProduk p, ProdukDesa d WHERE p.skuProduk LIKE d.sku AND p.status =2 AND p.skuCustomer LIKE ?1")
     public List findAllPesananBySku(String sku);
-    @Query("SELECT  p.skuProduk, p.skuCustomer , p.alamat, p.harga , p.metode, d.nama, d.skuDesa, d.gambar, p.id FROM TransaksiProduk p, ProdukDesa d WHERE p.skuProduk LIKE d.sku AND p.status =3 AND p.skuCustomer LIKE ?1")
+    @Query("SELECT p   FROM TransaksiProduk p, ProdukDesa d WHERE p.skuProduk LIKE d.sku AND p.status =3 AND p.skuCustomer LIKE ?1")
     public List findAllPesananSelesaBySku(String sku);
 
     public List findAllByStatus(Integer status);
