@@ -11,6 +11,7 @@ public interface AuthenticationControllerRoute {
     public String ROUTE_SIGN_UP = "/signup";
     public String ROUTE_SIGN_IN = "/signin";
     public String ROUTE_FIND_BY_USERNAME = "/find/{username}";
+    public String ROUTE_FIND_ALL = "/";
     public String ROUTE_FIND_BY_SKU = "/findSku/{sku}";
     public String ROUTE_UPDATE_BY_SKU = "/update/{sku}";
 }

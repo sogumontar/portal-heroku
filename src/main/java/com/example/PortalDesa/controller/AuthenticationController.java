@@ -5,6 +5,7 @@ import com.example.PortalDesa.model.Users;
 import com.example.PortalDesa.payload.DefaultResponse;
 import com.example.PortalDesa.payload.request.LoginRequest;
 import com.example.PortalDesa.payload.request.RegisterRequest;
+import com.example.PortalDesa.repository.UsersRepo;
 import com.example.PortalDesa.security.JwtTokenProvider;
 import com.example.PortalDesa.service.implement.AuthenticationServiceImpl;
 import com.example.PortalDesa.service.implement.UsersServiceImpl;
@@ -34,6 +35,13 @@ public class AuthenticationController {
 
     @Autowired
     UsersServiceImpl usersService;
+
+    @Autowired
+    UsersRepo usersRepo;
+    @GetMapping(AuthenticationControllerRoute.ROUTE_FIND_ALL)
+    public ResponseEntity<?> findAll(){
+        return ResponseEntity.ok(usersRepo.findAll());
+    }
 
     @GetMapping(AuthenticationControllerRoute.ROUTE_FIND_BY_USERNAME)
     public Users findwithUsername(@PathVariable String username){
