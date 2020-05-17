@@ -43,8 +43,8 @@ public class PenginapanServiceImpl implements PenginapanService {
     public void save(PenginapanRequest request) {
         Integer val = penginapanRepo.counter(request.getSkumerchant());
         System.out.println(val);
-        val++;
-        String pict = request.getSkumerchant()+"-"+val.toString()+".png";
+        Integer fix =val+1;
+        String pict = request.getSkumerchant()+"-"+fix.toString()+".png";
         Penginapan penginapan = new Penginapan(
                 skuGenereator(request.getDesa(), request.getNama()),
                 request.getNama(),
@@ -67,7 +67,8 @@ public class PenginapanServiceImpl implements PenginapanService {
         if (sequenceProdukRepo.existsByKey(key)) {
             SequenceProduk sequenceProduk = sequenceProdukRepo.findFirstByKey(key);
             Integer val = Integer.parseInt(sequenceProduk.getLast_seq());
-            String finalSequence = "000".concat(String.valueOf(val + 1));
+            Integer fix =val+1;
+            String finalSequence = "000".concat(String.valueOf(fix));
             sequenceProduk.setLast_seq(finalSequence);
             sequenceProdukRepo.save(sequenceProduk);
             return key + "-" + finalSequence;
@@ -121,11 +122,11 @@ public class PenginapanServiceImpl implements PenginapanService {
     public void addGambarDesa(String base64, String sku) {
         Integer val = penginapanRepo.counter(sku);
         System.out.println(val);
-        val++;
+        Integer fix =val+1;
         File currentDirFile = new File("");
         String helper = currentDirFile.getAbsolutePath();
         String currentDir = helper+"/src/main/resources/static/images/Penginapan/";
-        String pict =sku+"-"+val.toString()+".png";
+        String pict =sku+"-"+fix.toString()+".png";
         String partSeparator = ",";
         String encodedImg ="";
         if (base64.contains(partSeparator)) {

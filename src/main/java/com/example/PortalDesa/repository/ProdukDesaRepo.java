@@ -51,7 +51,7 @@ public interface ProdukDesaRepo extends JpaRepository<ProdukDesa, String> {
 
     public List<ProdukDesa> findAllByStatus(Integer status);
 
-    @Query("SELECT COUNT(u.sku) FROM ProdukDesa u WHERE u.sku LIKE ?1 ")
+    @Query("SELECT COUNT(u.sku) FROM ProdukDesa u WHERE u.skuDesa LIKE ?1 ")
     Integer counter (String skuDesa);
 
 }

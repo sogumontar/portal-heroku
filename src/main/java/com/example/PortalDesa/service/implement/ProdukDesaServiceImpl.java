@@ -33,7 +33,8 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         if (sequenceProdukRepo.existsByKey(key)) {
             SequenceProduk sequenceProduk = sequenceProdukRepo.findFirstByKey(key);
             Integer val = Integer.parseInt(sequenceProduk.getLast_seq());
-            String finalSequence = "000".concat(String.valueOf(val + 1));
+            Integer fix =val+1;
+            String finalSequence = "000".concat(String.valueOf(fix));
             sequenceProduk.setLast_seq(finalSequence);
             sequenceProdukRepo.save(sequenceProduk);
             return key + "-" + finalSequence;
@@ -52,8 +53,8 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
     public void save(ProdukDesaRequest request) {
         Integer val = produkDesaRepo.counter(request.getSkuDesa());
         System.out.println(val);
-        val++;
-        String pict = request.getSkuDesa()+"-"+val.toString()+".png";
+        Integer fix= val+1;
+        String pict = request.getSkuDesa()+"-"+fix.toString()+".png";
         ProdukDesa produkDesa = new ProdukDesa(
                 skuGenerator(request.getNama(), request.getSkuDesa()),
                 request.getNama(),
@@ -132,11 +133,11 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
     public void addGambarDesa(String base64, String sku) {
         Integer val = produkDesaRepo.counter(sku);
         System.out.println(val);
-        val++;
+        Integer fix= val+1;
         File currentDirFile = new File("");
         String helper = currentDirFile.getAbsolutePath();
         String currentDir = helper+"/src/main/resources/static/images/ProdukDesa/";
-        String pict =sku+"-"+val.toString()+".png";
+        String pict =sku+"-"+fix.toString()+".png";
         String partSeparator = ",";
         String encodedImg ="";
         if (base64.contains(partSeparator)) {
