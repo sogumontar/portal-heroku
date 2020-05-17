@@ -56,9 +56,14 @@ public class KeranjangController {
 
     @PostMapping(KeranjangControllerRoute.ROUTE_KERANJANG_CHECK)
     public ResponseEntity<?> check(@RequestBody KeranjangRequestCheck keranjangRequestCheck) {
-        Integer val=keranjangRepo.check(keranjangRequestCheck.getIdProduk(), keranjangRequestCheck.getSkuCustomer());
-        return ResponseEntity.ok(new DefaultResponse("sukses",val));
+        Boolean val=keranjangRepo.existsByIdProdukAndIdCustomer(keranjangRequestCheck.getIdProduk(), keranjangRequestCheck.getSkuCustomer());
+        Integer value=0;
+        if(val==Boolean.TRUE){
+            value=1;
+        }
+        return ResponseEntity.ok(new DefaultResponse("sukses",value));
     }
+
 
     @PutMapping(KeranjangControllerRoute.ROUTE_KERANJANG_UPDATE)
     public ResponseEntity<?> update(@RequestBody KeranjangRequestCheck requestCheck) {
