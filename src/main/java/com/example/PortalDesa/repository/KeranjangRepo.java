@@ -26,7 +26,7 @@ public interface KeranjangRepo extends JpaRepository<Keranjang,String> {
     @Query("SELECT COUNT(k.id) from Keranjang k where k.idProduk LIKE ?1 AND  k.idCustomer LIKE ?2 AND k.status=1")
     Integer check(String idProduk, String skuCustomer);
 
-    Boolean existsByIdProdukAndIdCustomer(String idProduk, String idCustomer);
+    Boolean existsByIdProdukAndIdCustomerAndStatus(String idProduk, String idCustomer, Integer status);
     @Transactional
     @Modifying
     @Query("UPDATE Keranjang k set k.status=3 where k.idCustomer LIKE ?1")

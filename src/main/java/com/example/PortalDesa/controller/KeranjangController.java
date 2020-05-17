@@ -56,7 +56,7 @@ public class KeranjangController {
 
     @PostMapping(KeranjangControllerRoute.ROUTE_KERANJANG_CHECK)
     public ResponseEntity<?> check(@RequestBody KeranjangRequestCheck keranjangRequestCheck) {
-        Boolean val=keranjangRepo.existsByIdProdukAndIdCustomer(keranjangRequestCheck.getIdProduk(), keranjangRequestCheck.getSkuCustomer());
+        Boolean val=keranjangRepo.existsByIdProdukAndIdCustomerAndStatus(keranjangRequestCheck.getIdProduk(), keranjangRequestCheck.getSkuCustomer(),1);
         Integer value=0;
         if(val==Boolean.TRUE){
             value=1;
