@@ -17,16 +17,34 @@ import java.util.Optional;
  * Created by Sogumontar Hendra Simangunsong on 09/04/2020.
  */
 @Repository
-public interface UsersRepo  extends JpaRepository<Users,String> {
+public interface UsersRepo extends JpaRepository<Users, String> {
     Optional<Users> findByUsernameOrEmail(String email, String username);
+
     Boolean existsByUsername(String username);
+
     Boolean existsByEmail(String email);
+
     Users findByUsername(String username);
+
     Users findFirstBySku(String sku);
+
     @Query("  SELECT u FROM Users u , UserRole ur WHERE u.sku = ur.sku_user AND (ur.role_id = ?1)")
     List findAllByRoles(int val);
+
     @Modifying
     @Transactional
     @Query("UPDATE Users p  SET p.name=?2, p.email=?3, p.alamat=?4 WHERE p.sku LIKE ?1")
     Integer updateBysku(String sku, String name, String email, String almat);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Users p  SET p.status=2 WHERE p.sku LIKE ?1")
+    Integer suspendBysku(String sku);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Users p  SET p.status=1 WHERE p.sku LIKE ?1")
+    Integer activateBysku(String sku);
+
+
 }

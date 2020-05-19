@@ -2,6 +2,7 @@ package com.example.PortalDesa.controller;
 
 import com.example.PortalDesa.controller.route.AdminDevControllerRoute;
 import com.example.PortalDesa.model.defaults.RoleName;
+import com.example.PortalDesa.payload.DefaultResponse;
 import com.example.PortalDesa.payload.request.DesaRequest;
 import com.example.PortalDesa.payload.request.RegisterRequest;
 import com.example.PortalDesa.service.implement.AuthenticationServiceImpl;
@@ -67,6 +68,19 @@ public class AdminDevController {
     @GetMapping(AdminDevControllerRoute.ROUTE_FIND_ALL_ACCOUNT_ADMIN)
     public ResponseEntity<?> findAllAccountAdmin() {
         return ResponseEntity.ok(usersService.findAllAccountAdmin());
+    }
+
+
+    @GetMapping(AdminDevControllerRoute.ROUTE_SUSPEND_ACCOUNT_ADMIN)
+    public ResponseEntity<?> suspend(@PathVariable String sku) {
+        usersService.suspendAccount(sku);
+        return ResponseEntity.ok().body(new DefaultResponse("Suspend Success", 200));
+    }
+
+    @GetMapping(AdminDevControllerRoute.ROUTE_ACTIVATE_ACCOUNT_ADMIN)
+    public ResponseEntity<?> activate(@PathVariable String sku) {
+        usersService.activateAccount(sku);
+        return ResponseEntity.ok().body(new DefaultResponse("Activate Success", 200));
     }
 
 }

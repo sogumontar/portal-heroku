@@ -41,4 +41,14 @@ public class UsersServiceImpl implements UsersService {
     public List findAllAccountAdmin() {
        return usersRepo.findAllByRoles(2);
     }
+
+    @Override
+    public Integer suspendAccount(String sku) {
+        return usersRepo.suspendBysku(sku);
+    }
+
+    @Override
+    public Integer activateAccount(String sku) {
+        return usersRepo.activateBysku(sku);
+    }
 }
