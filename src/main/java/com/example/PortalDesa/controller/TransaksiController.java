@@ -84,7 +84,7 @@ public class TransaksiController {
         return ResponseEntity.ok(new DefaultResponse("Cancel Pesanan Sukses",200));
     }
 
-    @PutMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_CANCEL_PESANAN)
+    @PutMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_BALIKIN_PESANAN)
     public ResponseEntity<?> kembalikanPesanan(@PathVariable String sku){
         transaksiProdukRepo.balikin(sku);
         return ResponseEntity.ok(new DefaultResponse("Cancel Pesanan Sukses",200));
