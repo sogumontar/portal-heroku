@@ -7,13 +7,20 @@ import lombok.NoArgsConstructor;
 /**
  * Created by Sogumontar Hendra Simangunsong on 14/05/2020.
  */
-@AllArgsConstructor
 @NoArgsConstructor
 public class KeranjangRequestCheck {
     String id;
     String idProduk;
     String skuCustomer;
     Integer jumlah;
+
+
+    public KeranjangRequestCheck(String id, String idProduk, String skuCustomer, Integer jumlah) {
+        this.id = id;
+        this.idProduk = idProduk;
+        this.skuCustomer = skuCustomer;
+        this.jumlah = jumlah;
+    }
 
     public String getId() {
         return id;

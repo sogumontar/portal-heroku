@@ -27,6 +27,8 @@ public interface KeranjangRepo extends JpaRepository<Keranjang,String> {
     Integer check(String idProduk, String skuCustomer);
 
     Boolean existsByIdProdukAndIdCustomerAndStatus(String idProduk, String idCustomer, Integer status);
+
+    Keranjang findByIdProdukAndIdCustomerAndStatus(String idProduk, String idCustomer, Integer status);
     @Transactional
     @Modifying
     @Query("UPDATE Keranjang k set k.status=3 where k.idCustomer LIKE ?1")
@@ -36,6 +38,13 @@ public interface KeranjangRepo extends JpaRepository<Keranjang,String> {
     @Modifying
     @Query("UPDATE Keranjang k set k.jumlah=?2 where k.id LIKE ?1")
     Integer update(String id, Integer jumlah);
+
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Keranjang k set k.jumlah=?3 where k.idProduk LIKE ?1 AND k.idCustomer LIKE ?2")
+    Integer updateJumlahCart(String idProduk, String skuCustomer, Integer jumlah);
+
 
     @Transactional
     @Modifying
