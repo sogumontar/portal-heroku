@@ -78,13 +78,13 @@ public class TransaksiController {
         return ResponseEntity.ok(transaksiProdukRepo.findAllByStatus(3));
     }
 
-    @PutMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_CANCEL_PESANAN)
+    @GetMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_CANCEL_PESANAN)
     public ResponseEntity<?> cancelPesanan(@PathVariable String sku){
         transaksiProdukRepo.cancel(sku);
         return ResponseEntity.ok(new DefaultResponse("Cancel Pesanan Sukses",200));
     }
 
-    @PutMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_BALIKIN_PESANAN)
+    @GetMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_BALIKIN_PESANAN)
     public ResponseEntity<?> kembalikanPesanan(@PathVariable String sku){
         transaksiProdukRepo.balikin(sku);
         return ResponseEntity.ok(new DefaultResponse("Cancel Pesanan Sukses",200));
