@@ -84,6 +84,12 @@ public class TransaksiController {
         return ResponseEntity.ok(new DefaultResponse("Cancel Pesanan Sukses",200));
     }
 
+    @PutMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_CANCEL_PESANAN)
+    public ResponseEntity<?> kembalikanPesanan(@PathVariable String sku){
+        transaksiProdukRepo.balikin(sku);
+        return ResponseEntity.ok(new DefaultResponse("Cancel Pesanan Sukses",200));
+    }
+
     @GetMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_IMAGE_RESI)
     public ResponseEntity<byte[]> getImage(@PathVariable String filePath) throws IOException {
         HttpHeaders headers = new HttpHeaders();
