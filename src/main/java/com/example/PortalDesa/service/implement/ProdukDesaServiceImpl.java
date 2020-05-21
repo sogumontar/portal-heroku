@@ -139,7 +139,7 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         String currentDir = helper+"/src/main/resources/static/images/ProdukDesa/";
         String pict =sku+"-"+fix.toString()+".png";
         String partSeparator = ",";
-        String encodedImg =base64;
+        String encodedImg ="";
         if (base64.contains(partSeparator)) {
             encodedImg = base64.split(partSeparator)[1];
         }
@@ -147,7 +147,7 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         try(FileOutputStream fos = new FileOutputStream(file)){
             byte[] decoder = Base64.getDecoder().decode(encodedImg);
             fos.write(decoder);
-            System.out.println("Image file saved " + encodedImg);
+            System.out.println("Image file saved " + base64);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
