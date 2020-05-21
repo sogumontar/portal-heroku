@@ -147,7 +147,7 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         try(FileOutputStream fos = new FileOutputStream(file)){
             byte[] decoder = Base64.getDecoder().decode(encodedImg);
             fos.write(decoder);
-            System.out.println("Image file saved");
+            System.out.println("Image file saved " + base64);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
