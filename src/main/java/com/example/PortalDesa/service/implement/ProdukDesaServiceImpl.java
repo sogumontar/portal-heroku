@@ -142,6 +142,8 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
         String encodedImg ="";
         if (base64.contains(partSeparator)) {
             encodedImg = base64.split(partSeparator)[1];
+        }else{
+            encodedImg=base64;
         }
         File file =new File(currentDir+"/"+pict);
         try(FileOutputStream fos = new FileOutputStream(file)){
