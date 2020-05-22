@@ -36,13 +36,14 @@ public class TransaksiServiceImpl implements TransaksiService {
         transaksiProdukRepo.save(transaksiProduk1);
     }
 
+
     @Override
     public void update(String idpesanan,String idCustomer, String base64) {
         Integer val = transaksiProdukRepo.counter(idCustomer);
         val++;
         File currentDirFile = new File("");
         String helper = currentDirFile.getAbsolutePath();
-        String currentDir = helper+"/Picture/Resi";
+        String currentDir = helper+"/src/main/resources/static/images/Resi/";
         String pict =idCustomer+"-"+val.toString()+".png";
         String partSeparator = ",";
         String encodedImg ="";
