@@ -75,11 +75,12 @@ public class DesaServiceImpl implements DesaService {
         }
         File file =new File(currentDir+"/"+pict);
         try(FileOutputStream fos = new FileOutputStream(file)){
-            byte[] decoder = Base64.getDecoder().decode(encodedImg);
-            fos.write(decoder);
+            byte[] dataBytes =  Base64.getMimeDecoder().decode(encodedImg);
+            fos.write(dataBytes);
             System.out.println("Image file saved");
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
+
     }
 }

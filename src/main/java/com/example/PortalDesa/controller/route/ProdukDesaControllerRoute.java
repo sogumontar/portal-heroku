@@ -12,6 +12,7 @@ public interface ProdukDesaControllerRoute {
     public String ROUTE_PRODUK_DESA_ALL_BY_SKU_DESA = "/skuDesa/{sku}";
     public String ROUTE_PRODUK_DESA_ADD = "/add";
     public String ROUTE_PRODUK_DESA_ADD_GAMBAR = "/add/gambar";
+    public String ROUTE_PRODUK_DESA_UPDATE_GAMBAR = "/update/gambar";
     public String ROUTE_PRODUK_DESA_FIND_BY_SKU = "/sku/{sku}";
     public String ROUTE_PRODUK_DESA_UPDATE = "/update/{sku}";
     public String ROUTE_PRODUK_DESA_UPDATE_WITH_GAMBAR = "/updateWithGambar/{sku}";

@@ -143,6 +143,30 @@ public class PenginapanServiceImpl implements PenginapanService {
         }
     }
 
+
+
+    @Override
+    public void updateGambarDesa(String base64, String nama) {
+        File currentDirFile = new File("");
+        String helper = currentDirFile.getAbsolutePath();
+        String currentDir = helper+"/src/main/resources/static/images/Penginapan/";
+        String pict =nama;
+        String partSeparator = ",";
+        String encodedImg ="";
+        if (base64.contains(partSeparator)) {
+            encodedImg = base64.split(partSeparator)[1];
+        }
+        File file =new File(currentDir+"/"+pict);
+        try(FileOutputStream fos = new FileOutputStream(file)){
+//            byte[] decoder = Base64.getDecoder().decode(encodedImg);
+            byte[] dataBytes =  Base64.getMimeDecoder().decode(encodedImg);
+            fos.write(dataBytes);
+            System.out.println("Image file saved");
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
     @Override
     public byte[] loadImage(String fileName) throws IOException {
         File file = new File( "images/Penginapan/" + fileName);

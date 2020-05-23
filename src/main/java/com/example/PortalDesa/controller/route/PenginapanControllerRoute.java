@@ -17,6 +17,7 @@ public interface PenginapanControllerRoute {
     public String ROUTE_SUSPEND_PENGINAPAN = "/suspend/{sku}";
     public String ROUTE_ACTIVATE_PENGINAPAN = "/activate/{sku}";
     public String ROUTE_ADD_GAMBAR = "/penginapan/add/gambar";
+    public String ROUTE_UPDATE_GAMBAR = "/penginapan/update/gambar";
     public String ROUTE_GET_IMAGE = "/get/{filePath}";
     public String ROUTE_GET_ALL_BY_MERCHANT = "/bySkuAdmin/{sku}";
 }

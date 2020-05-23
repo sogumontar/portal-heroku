@@ -34,5 +34,7 @@ public interface PenginapanService {
 
     public void addGambarDesa(String base64, String sku);
 
+    public void updateGambarDesa(String base64, String nama);
+
     byte[] loadImage(String fileName) throws IOException;
 }
