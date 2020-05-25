@@ -23,13 +23,13 @@ public interface KeranjangRepo extends JpaRepository<Keranjang,String> {
     @Query("SELECT k from Keranjang k where k.status=1 AND  k.idCustomer LIKE ?1")
     List findAllBySkuCustomer(String skuCustomer);
 
-    @Query("SELECT k, p from Keranjang k JOIN ProdukDesa p  ON k.idProduk where k.status=1 AND  k.idCustomer LIKE ?1")
+    @Query("SELECT k, p from Keranjang k JOIN ProdukDesa p  ON k.idProduk LIKE p.sku where k.status=1 AND  k.idCustomer LIKE ?1")
     List findAllBySkuCustomerForWeb(String skuCustomer);
 
     @Query("SELECT k from Keranjang k where k.status=1 AND  k.skuDesa LIKE ?1")
     List findAllByMerchant(String skuDesa);
 
-    @Query("SELECT k , p from Keranjang k  JOIN ProdukDesa p  ON k.idProduk where k.status=1 AND  k.skuDesa LIKE ?1")
+    @Query("SELECT k , p from Keranjang k  JOIN ProdukDesa p  ON k.idProduk LIKE p.sku where k.status=1 AND  k.skuDesa LIKE ?1")
     List findAllByMerchantForWeb(String skuDesa);
 
     @Query("SELECT COUNT(k.id) from Keranjang k where k.idProduk LIKE ?1 AND  k.idCustomer LIKE ?2 AND k.status=1")
