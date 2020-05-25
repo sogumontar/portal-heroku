@@ -12,9 +12,9 @@ public interface KeranjangControllerRoute {
     public String ROUTE_KERANJANG_WITH_SKU_MERCHANT = "/merchant/{sku}";
 
     //For Web
-    public String ROUTE_WEB_KERANJANG_ALL = "/";
-    public String ROUTE_WEB_KERANJANG_WITH_SKU_CUSTOMER = "/customer/{sku}";
-    public String ROUTE_WEB_KERANJANG_WITH_SKU_MERCHANT = "/merchant/{sku}";
+    public String ROUTE_WEB_KERANJANG_ALL = "/web/";
+    public String ROUTE_WEB_KERANJANG_WITH_SKU_CUSTOMER = "/web/customer/{sku}";
+    public String ROUTE_WEB_KERANJANG_WITH_SKU_MERCHANT = "/web/merchant/{sku}";
 
 
     public String ROUTE_KERANJANG_SAVE = "/save";
