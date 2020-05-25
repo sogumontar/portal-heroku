@@ -62,8 +62,26 @@ public class TransaksiServiceImpl implements TransaksiService {
         transaksiProdukRepo.update(idpesanan,pict);
     }
 
+
+
+
     @Override
     public void updateCart(String skuUser) {
         keranjangRepo.updateKeranjang(skuUser);
+    }
+
+    @Override
+    public void terimaPesanan(String idPesanan) {
+        transaksiProdukRepo.actionPesanan(idPesanan,4);
+    }
+
+    @Override
+    public void tolakPesanan(String idPesanan) {
+        transaksiProdukRepo.actionPesanan(idPesanan,5);
+    }
+
+    @Override
+    public TransaksiProduk findById(String idPesanan) {
+        return transaksiProdukRepo.findFirstById(idPesanan);
     }
 }

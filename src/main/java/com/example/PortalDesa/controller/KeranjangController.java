@@ -25,6 +25,7 @@ public class KeranjangController {
     @Autowired
     KeranjangRepo keranjangRepo;
 
+    //For Android
     @GetMapping(KeranjangControllerRoute.ROUTE_KERANJANG_ALL)
     public ResponseEntity<?> findAll() {
         return ResponseEntity.ok(keranjangService.findAll());
@@ -38,6 +39,22 @@ public class KeranjangController {
     @GetMapping(KeranjangControllerRoute.ROUTE_KERANJANG_WITH_SKU_MERCHANT)
     public ResponseEntity<?> findAllWithSkuMerchant(@PathVariable String sku) {
         return ResponseEntity.ok(keranjangService.findAllByMerchant(sku));
+    }
+
+    //For Web
+    @GetMapping(KeranjangControllerRoute.ROUTE_WEB_KERANJANG_ALL)
+    public ResponseEntity<?> findAllForWeb() {
+        return ResponseEntity.ok(keranjangRepo.findAllForWeb());
+    }
+
+    @GetMapping(KeranjangControllerRoute.ROUTE_WEB_KERANJANG_WITH_SKU_CUSTOMER)
+    public ResponseEntity<?> findAllWithSkuCustomerForWeb(@PathVariable String sku) {
+        return ResponseEntity.ok(keranjangRepo.findAllBySkuCustomerForWeb(sku));
+    }
+
+    @GetMapping(KeranjangControllerRoute.ROUTE_WEB_KERANJANG_WITH_SKU_MERCHANT)
+    public ResponseEntity<?> findAllWithSkuMerchantForWeb(@PathVariable String sku) {
+        return ResponseEntity.ok(keranjangRepo.findAllByMerchantForWeb(sku));
     }
 
     @PostMapping(KeranjangControllerRoute.ROUTE_KERANJANG_SAVE)

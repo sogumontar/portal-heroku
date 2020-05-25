@@ -84,6 +84,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("/produk/**")
                 .permitAll()
+                .antMatchers("/transaksi/**")
+                .permitAll()
 
         ;
 
