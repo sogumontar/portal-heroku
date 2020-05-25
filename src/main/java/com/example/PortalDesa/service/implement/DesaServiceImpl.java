@@ -32,18 +32,23 @@ public class DesaServiceImpl implements DesaService {
     @Autowired
     UsersRepo usersRepo;
 
+    public String getSku(String rand){
+        return rand;
+    }
     @Override
     public ResponseEntity<?> addDesa(DesaRequest desaRequest) {
         Users users =usersRepo.findByUsername(desaRequest.getUsername());
         String skuAdmin=users.getSku();
         System.out.println(skuAdmin);
+        String skuFix=getSku(UUID.randomUUID().toString());
         Desa desa = new Desa(
-                UUID.randomUUID().toString(),
+                skuFix,
                 desaRequest.getNama(),
                 KecamatanDefaults.valueOf(desaRequest.getKecamatan()),
                 1,
                 skuAdmin,
-                desaRequest.getKecamatan()
+                desaRequest.getKecamatan(),
+                skuFix+".png"
         );
         desaRepo.save(desa);
         return ResponseEntity.ok(desa);
@@ -58,7 +63,7 @@ public class DesaServiceImpl implements DesaService {
                 desaRequest.getNamaKepalaDesa(),
                 KecamatanDefaults.valueOf(desaRequest.getKecamatan()),
                 desaRequest.getJumlahPenduduk(),
-                PathImageDb.PATH_FOR_IMAGE_DESA+sku+".png"
+                sku+".png"
         );
     }
 

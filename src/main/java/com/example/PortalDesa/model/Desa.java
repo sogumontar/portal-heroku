@@ -60,13 +60,14 @@ public class Desa  {
     }
 
 
-    public Desa(String sku, String nama, KecamatanDefaults kecamatan, int status, String skuAdmin,String kec) {
+    public Desa(String sku, String nama, KecamatanDefaults kecamatan, int status, String skuAdmin,String kec,String gambar) {
         this.sku = sku;
         this.nama = nama;
         this.kecamatan = kecamatan;
         this.status = status;
         this.skuAdmin = skuAdmin;
         this.kec=kec;
+        this.gambar = gambar;
     }
 
     public String getKec() {
