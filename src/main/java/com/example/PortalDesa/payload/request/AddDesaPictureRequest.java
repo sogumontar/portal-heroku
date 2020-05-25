@@ -1,8 +1,11 @@
 package com.example.PortalDesa.payload.request;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Created by Sogumontar Hendra Simangunsong on 03/05/2020.
  */
+@NoArgsConstructor
 public class AddDesaPictureRequest {
     public String base64File;
     public String skuDesa;
