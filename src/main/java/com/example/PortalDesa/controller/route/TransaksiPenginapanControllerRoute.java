@@ -13,6 +13,7 @@ public interface TransaksiPenginapanControllerRoute {
     public String ROUTE_TRANSAKSI_PENGINAPAN_FIND__BY_SKU = "/sku/{sku}";
     public String ROUTE_TRANSAKSI_PENGINAPAN_ADD = "/add";
     public String ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_SUDAH_BAYAR_BY_SKU = "/sku/bayar/{sku}";
+    public String ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_SUDAH_SELESAI_BY_SKU = "/sku/selesai/{sku}";
     public String ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_MASIH_PESAN_BY_SKU = "/sku/pesan/{sku}";
     public String ROUTE_TRANSAKSI_PENGINAPAN_BAYAR_RESI = "/bayar/{idPesanan}";
     public String ROUTE_TRANSAKSI_PENGINAPAN_TERIMA_PESANAN = "/terima/{idPesanan}";

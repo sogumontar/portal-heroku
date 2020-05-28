@@ -31,7 +31,7 @@ public interface TransaksiProdukRepo extends JpaRepository<TransaksiProduk,Strin
 
     @Modifying
     @Transactional
-    @Query("UPDATE TransaksiProduk p  SET  p.status=0 WHERE p.id LIKE ?1")
+    @Query("UPDATE TransaksiProduk p  SET  p.status=2 WHERE p.id LIKE ?1")
     public void cancel(String idPesanan);
 
     @Modifying

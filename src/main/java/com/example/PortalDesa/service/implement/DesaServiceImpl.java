@@ -57,6 +57,7 @@ public class DesaServiceImpl implements DesaService {
     @Override
     public void updateDesa(String sku,DesaRequest desaRequest) {
         System.out.println(sku);
+        System.out.println(desaRequest.getNamaKepalaDesa());
         desaRepo.updateBySku(
                 sku,
                 desaRequest.getNama(),

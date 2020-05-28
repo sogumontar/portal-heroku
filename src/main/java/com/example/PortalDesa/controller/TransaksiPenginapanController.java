@@ -76,12 +76,17 @@ public class TransaksiPenginapanController {
 
     @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_MASIH_PESAN_BY_SKU)
     public ResponseEntity<?> findAllPesanan(@PathVariable String sku) {
-        return ResponseEntity.ok(transaksiPenginapanRepo.findAllPesananBayarBySkuCustomer(sku));
+        return ResponseEntity.ok(transaksiPenginapanRepo.findAllTransksiBySkuCustomer(sku));
+    }
+
+    @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_SUDAH_SELESAI_BY_SKU)
+    public ResponseEntity<?> findAllPesananSelesai(@PathVariable String sku) {
+        return ResponseEntity.ok(transaksiPenginapanRepo.findAllPesananSelesaiBySkuCustomer(sku));
     }
 
     @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_SUDAH_BAYAR_BY_SKU)
-    public ResponseEntity<?> findAllPesananSelesai(@PathVariable String sku) {
-        return ResponseEntity.ok(transaksiPenginapanRepo.findAllPesananSelesaiBySkuCustomer(sku));
+    public ResponseEntity<?> findAllPesananSudahBayar(@PathVariable String sku) {
+        return ResponseEntity.ok(transaksiPenginapanRepo.findAllPesananBayarBySkuCustomer(sku));
     }
 
     @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_FIND_ALL_PESANAN)
