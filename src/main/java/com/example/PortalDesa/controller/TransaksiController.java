@@ -90,7 +90,7 @@ public class TransaksiController {
 
     @GetMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_FIND_ALL_SUDAH_BAYAR_BY_SKU)
     public ResponseEntity<?> findAllPesananSelesai(@PathVariable String sku) {
-        return ResponseEntity.ok(transaksiProdukRepo.findAllPesananSelesaBySku(sku));
+        return ResponseEntity.ok(transaksiProdukRepo.findAllPesananSudahBayar(sku));
     }
 
     @GetMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_FIND_ALL_PESANAN)

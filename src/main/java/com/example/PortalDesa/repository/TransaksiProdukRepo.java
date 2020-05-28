@@ -23,6 +23,9 @@ public interface TransaksiProdukRepo extends JpaRepository<TransaksiProduk,Strin
 
     public List findAllByStatus(Integer status);
 
+    @Query("SELECT p   FROM TransaksiProduk p  WHERE p.status <>2 AND p.status <>1 AND p.skuCustomer LIKE ?1")
+    public List findAllPesananSudahBayar(String sku);
+
     public TransaksiProduk findFirstById(String id);
     @Modifying
     @Transactional

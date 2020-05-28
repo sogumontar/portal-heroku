@@ -16,7 +16,7 @@ import java.util.List;
 public interface TransaksiPenginapanRepo extends JpaRepository<TransaksiPenginapan,String> {
     @Query("SELECT p FROM TransaksiPenginapan p  WHERE  p.status =1 AND p.skuCustomer LIKE ?1")
     public List findAllTransksiBySkuCustomer(String sku);
-    @Query("SELECT p FROM TransaksiPenginapan p WHERE p.status =2 AND p.skuCustomer LIKE ?1")
+    @Query("SELECT p FROM TransaksiPenginapan p WHERE p.status <> 2 AND p.skuCustomer LIKE ?1")
     public List findAllPesananBayarBySkuCustomer(String sku);
     @Query("SELECT p   FROM TransaksiPenginapan p  WHERE p.status =3 AND p.skuCustomer LIKE ?1")
     public List findAllPesananSelesaiBySkuCustomer(String sku);
