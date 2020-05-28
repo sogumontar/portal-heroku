@@ -44,7 +44,7 @@ public class TransaksiServiceImpl implements TransaksiService {
         File currentDirFile = new File("");
         String helper = currentDirFile.getAbsolutePath();
         String currentDir = helper+"/src/main/resources/static/images/Resi/";
-        String pict =idCustomer+"-"+val.toString()+".png";
+        String pict =idCustomer+"-"+ idpesanan+ "-" +val.toString()+".png";
         String partSeparator = ",";
         String encodedImg ="";
         if (base64.contains(partSeparator)) {
