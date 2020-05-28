@@ -45,7 +45,7 @@ public class TransaksiPenginapanServiceImpl implements TransaksiPenginapanServic
         File currentDirFile = new File("");
         String helper = currentDirFile.getAbsolutePath();
         String currentDir = helper+"/src/main/resources/static/images/Resi/";
-        String pict =idCustomer+"-"+"penginapan-"+val.toString()+".png";
+        String pict =idCustomer+"-"+"penginapan-" +idPesanan + "-" +val.toString()+".png";
         String partSeparator = ",";
         String encodedImg ="";
         if (base64.contains(partSeparator)) {
