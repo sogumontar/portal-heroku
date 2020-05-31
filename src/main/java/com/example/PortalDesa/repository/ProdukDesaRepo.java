@@ -19,6 +19,10 @@ public interface ProdukDesaRepo extends JpaRepository<ProdukDesa, String> {
     @Query("SELECT p FROM ProdukDesa p WHERE p.status =1 ")
     public List<ProdukDesa> findAll();
 
+    @Query(value = "SELECT  * FROM produk_desa   WHERE status =1  ORDER BY jumlah_pembelian ASC  LIMIT 1",nativeQuery = true)
+    public ProdukDesa findPopular();
+
+
     public ProdukDesa findFirstBySku(String sku);
 
     @Query("SELECT p FROM ProdukDesa p WHERE p.status =1 AND p.skuDesa LIKE ?1 ")
@@ -28,6 +32,11 @@ public interface ProdukDesaRepo extends JpaRepository<ProdukDesa, String> {
     @Transactional
     @Query("UPDATE ProdukDesa p  SET p.nama=?2, p.harga=?3, p.deskripsi=?4 WHERE p.sku LIKE ?1")
     public void updateBySku(String sku, String nama, Integer harga, String deskripsi );
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE ProdukDesa p  SET p.jumlahPembelian=?2 WHERE p.sku LIKE ?1")
+    public void updateCounterBySku(String sku, Integer jumlah);
 
     @Modifying
     @Transactional

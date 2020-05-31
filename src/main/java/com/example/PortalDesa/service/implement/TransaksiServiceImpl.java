@@ -1,7 +1,9 @@
 package com.example.PortalDesa.service.implement;
 
+import com.example.PortalDesa.model.ProdukDesa;
 import com.example.PortalDesa.model.TransaksiProduk;
 import com.example.PortalDesa.repository.KeranjangRepo;
+import com.example.PortalDesa.repository.ProdukDesaRepo;
 import com.example.PortalDesa.repository.TransaksiProdukRepo;
 import com.example.PortalDesa.service.TransaksiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +11,10 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
+import java.util.List;
 
 /**
  * Created by Sogumontar Hendra Simangunsong on 05/05/2020.
@@ -19,6 +24,9 @@ public class TransaksiServiceImpl implements TransaksiService {
 
     @Autowired
     TransaksiProdukRepo transaksiProdukRepo;
+
+    @Autowired
+    ProdukDesaRepo produkDesaRepo;
 
     @Autowired
     KeranjangRepo keranjangRepo;
@@ -72,6 +80,21 @@ public class TransaksiServiceImpl implements TransaksiService {
 
     @Override
     public void terimaPesanan(String idPesanan) {
+        TransaksiProduk transaksiProduk1 =transaksiProdukRepo.findFirstById(idPesanan);
+        String str[]= transaksiProduk1.getSkuProduk().split(",");
+        List<String> data= new ArrayList<String>();
+        data= Arrays.asList(str);
+        for(String dat : data) {
+            System.out.println(dat);
+            ProdukDesa produkDesa = produkDesaRepo.findFirstBySku(dat);
+            Integer nilai = 0;
+            if (produkDesa.getJumlahPembelian() == null) {
+                nilai = 0;
+            } else {
+                nilai = produkDesa.getJumlahPembelian();
+            }
+            produkDesaRepo.updateCounterBySku(dat, nilai + 1);
+        }
         transaksiProdukRepo.actionPesanan(idPesanan,4);
     }
 

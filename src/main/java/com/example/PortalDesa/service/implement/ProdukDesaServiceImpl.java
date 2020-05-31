@@ -28,6 +28,11 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
     SequenceProdukRepo sequenceProdukRepo;
 
     @Override
+    public ProdukDesa findPopular() {
+        return produkDesaRepo.findPopular();
+    }
+
+    @Override
     public String skuGenerator(String name, String desa) {
         String key = subStr(name) + "-" + subStr(desa);
         if (sequenceProdukRepo.existsByKey(key)) {

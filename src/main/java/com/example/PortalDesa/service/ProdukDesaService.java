@@ -11,6 +11,8 @@ import java.util.List;
  */
 
 public interface ProdukDesaService {
+    public ProdukDesa findPopular();
+
     public String skuGenerator(String name, String desa);
 
     public String subStr(String str);

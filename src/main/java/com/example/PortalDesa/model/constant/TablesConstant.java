@@ -15,6 +15,7 @@ public interface TablesConstant {
     public String TABLE_ALAMAT_CUSTOMER = "alamat_customer";
     public String TABLE_TRANSAKSI_PRODUK = "transaksi_produk";
     public String TABLE_TRANSAKSI_PENGINAPAN = "transaksi_penginapan";
+    public String TABLE_ARTIKEL = "artikel";
 
     //for sequence
     public String TABEL_SEQUENCE_USERS ="sequence_users";

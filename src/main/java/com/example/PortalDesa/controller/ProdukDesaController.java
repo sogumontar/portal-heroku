@@ -39,8 +39,15 @@ public class ProdukDesaController {
         return ResponseEntity.ok(produkDesaService.findAll());
     }
 
+    @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_POPULAR)
+    public ResponseEntity<?> findPopular() {
+        System.out.println(produkDesaService.findPopular());
+        return ResponseEntity.ok(produkDesaService.findPopular());
+    }
+
+
     @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ALL_BY_SKU_DESA)
-    public ResponseEntity<?> findALlBySkuDesa(@PathVariable String sku){
+    public ResponseEntity<?> findALlBySkuDesa(@PathVariable String sku) {
         return ResponseEntity.ok(produkDesaService.findAllBySkuDesa(sku));
     }
 
@@ -52,43 +59,43 @@ public class ProdukDesaController {
     @PostMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ADD)
     public ResponseEntity<?> addProdukDesa(@RequestBody ProdukDesaRequest request) {
         produkDesaService.save(request);
-        return ResponseEntity.ok(new DefaultResponse("Add Produk Success",200));
+        return ResponseEntity.ok(new DefaultResponse("Add Produk Success", 200));
     }
 
     @PostMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ADD_GAMBAR)
-    public ResponseEntity<?> addGambarDesa(@RequestBody ProdukDesaRequest request){
-        produkDesaService.addGambarDesa(request.getGambar(),request.getNama());
-        return ResponseEntity.ok(new DefaultResponse("add gambar sukses",200));
+    public ResponseEntity<?> addGambarDesa(@RequestBody ProdukDesaRequest request) {
+        produkDesaService.addGambarDesa(request.getGambar(), request.getNama());
+        return ResponseEntity.ok(new DefaultResponse("add gambar sukses", 200));
     }
 
     @PostMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_UPDATE_GAMBAR)
-    public ResponseEntity<?> updateGambarDesa(@RequestBody ProdukDesaRequest request){
-        produkDesaService.updateGambarDesa(request.getGambar(),request.getNama());
-        return ResponseEntity.ok(new DefaultResponse("add gambar sukses",200));
+    public ResponseEntity<?> updateGambarDesa(@RequestBody ProdukDesaRequest request) {
+        produkDesaService.updateGambarDesa(request.getGambar(), request.getNama());
+        return ResponseEntity.ok(new DefaultResponse("add gambar sukses", 200));
     }
 
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_UPDATE)
     public ResponseEntity<?> updateProdukDesa(@RequestBody ProdukDesaRequest request, @PathVariable String sku) {
         produkDesaService.updateProduk(sku, request);
-        return ResponseEntity.ok(new DefaultResponse("Update Produk Success",200));
+        return ResponseEntity.ok(new DefaultResponse("Update Produk Success", 200));
     }
 
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_UPDATE_WITH_GAMBAR)
     public ResponseEntity<?> updateProdukDesaWithGambar(@RequestBody ProdukDesaRequest request, @PathVariable String sku) {
         produkDesaService.updateProduk(sku, request);
-        return ResponseEntity.ok(new DefaultResponse("Update Produk Success",200));
+        return ResponseEntity.ok(new DefaultResponse("Update Produk Success", 200));
     }
 
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_SUSPEND)
     public ResponseEntity<?> suspendProduk(@PathVariable String sku) {
         produkDesaService.suspendProduk(sku);
-        return ResponseEntity.ok(new DefaultResponse("Suspend Produk Success",200));
+        return ResponseEntity.ok(new DefaultResponse("Suspend Produk Success", 200));
     }
 
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_DELETE)
     public ResponseEntity<?> deleteProduk(@PathVariable String sku) {
         produkDesaService.deleteProduk(sku);
-        return ResponseEntity.ok(new DefaultResponse("Delete Produk Success",200));
+        return ResponseEntity.ok(new DefaultResponse("Delete Produk Success", 200));
     }
 
     @CrossOrigin
@@ -101,7 +108,7 @@ public class ProdukDesaController {
     @PutMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ACTIVATE_BY_SKU)
     public ResponseEntity<?> activate(@PathVariable String sku) {
         produkDesaService.activate(sku);
-        return ResponseEntity.ok(new DefaultResponse("Activate Success",200));
+        return ResponseEntity.ok(new DefaultResponse("Activate Success", 200));
     }
 
     @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_IMAGE_GET_BY_NAME)
@@ -109,6 +116,6 @@ public class ProdukDesaController {
         HttpHeaders headers = new HttpHeaders();
 
         headers.setContentType(MediaType.IMAGE_PNG);
-        return new ResponseEntity<byte[]>(storageService.loadImage("ProdukDesa",filePath), headers, HttpStatus.OK);
+        return new ResponseEntity<byte[]>(storageService.loadImage("ProdukDesa", filePath), headers, HttpStatus.OK);
     }
 }
