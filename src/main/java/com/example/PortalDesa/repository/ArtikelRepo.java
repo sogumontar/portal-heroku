@@ -14,6 +14,9 @@ import java.util.List;
  */
 @Repository
 public interface ArtikelRepo extends JpaRepository<Artikel, String> {
+
+    List findAllByJenis(String jenis);
+
     @Query("SELECT k ,p from Artikel k JOIN Desa p  ON k.skuAdmin LIKE p.skuAdmin ")
     List findAllForWeb();
 

@@ -17,6 +17,9 @@ public interface ArtikelControllerRoute {
 
     //For Android
     String ROUTE_ARTIKEL_ALL= "/";
+    String ROUTE_ARTIKEL_ARTIEKL_ALL= "/artikel/";
+    String ROUTE_ARTIKEL_BERITA_ALL= "/berita/";
+    String ROUTE_ARTIKEL_PENGUMUMAN_ALL= "/pengumuman/";
     String ROUTE_ARTIKEL_ALL_BY_SKU = "/{sku}";
     String ROUTE_ARTIKEL_BY_SKU = "/artikel/{sku}";
     String ROUTE_PENGUMUMAN_ALL_BY_SKU = "/pemumuman{sku}";

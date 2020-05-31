@@ -55,10 +55,26 @@ public class ArtikelController {
     }
 
 
+    @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_ARTIEKL_ALL)
+    public ResponseEntity<?> artikelFindAll() {
+        return ResponseEntity.ok(artikelRepo.findAllByJenis("Artikel"));
+    }
+
+    @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_BERITA_ALL)
+    public ResponseEntity<?> beritaFindAll() {
+        return ResponseEntity.ok(artikelRepo.findAllByJenis("Berita"));
+    }
+
+    @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_PENGUMUMAN_ALL)
+    public ResponseEntity<?> pengumumanFindAll() {
+        return ResponseEntity.ok(artikelRepo.findAllByJenis("Pengumuman"));
+    }
+
     @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_ALL)
     public ResponseEntity<?> findAll() {
         return ResponseEntity.ok(artikelRepo.findAll());
     }
+
 
     @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_ALL_BY_SKU)
     public ResponseEntity<?> findAllBySku(@PathVariable String sku) {
