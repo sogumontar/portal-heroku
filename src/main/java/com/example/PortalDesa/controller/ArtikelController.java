@@ -28,6 +28,22 @@ public class ArtikelController {
         return ResponseEntity.ok(artikelRepo.findAllForWeb());
     }
 
+    @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_BY_SKU_FOR_WEB)
+    public ResponseEntity<?> findAllArtikelForWeb(@PathVariable String sku) {
+        return ResponseEntity.ok(artikelRepo.findAllByJenis("Artikel",sku));
+    }
+
+    @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_ALL_BERITA_BY_SKU_FOR_WEB)
+    public ResponseEntity<?> findAllBeritaForWeb(@PathVariable String sku) {
+        return ResponseEntity.ok(artikelRepo.findAllByJenis("Berita",sku));
+    }
+
+    @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_ALL_PENGUMUMAN_BY_SKU_FOR_WEB)
+    public ResponseEntity<?> findAllPengumumanForWeb(@PathVariable String sku) {
+        return ResponseEntity.ok(artikelRepo.findAllByJenis("Pengumuman",sku));
+    }
+
+
     @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_ALL_BY_SKU_FOR_WEB)
     public ResponseEntity<?> findAllBySkuForWeb(@PathVariable String sku){
         return ResponseEntity.ok(artikelService.findAllArtikelBySkuForWeb(sku));
@@ -47,6 +63,21 @@ public class ArtikelController {
     @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_ALL_BY_SKU)
     public ResponseEntity<?> findAllBySku(@PathVariable String sku) {
         return ResponseEntity.ok(artikelService.findAllArtikelBySku(sku));
+    }
+
+    @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_BY_SKU)
+    public ResponseEntity<?> findAllArtikelsBySku(@PathVariable String sku) {
+        return ResponseEntity.ok(artikelRepo.findAllBySkuAdminAndJenis(sku,"Artikel"));
+    }
+
+    @GetMapping(ArtikelControllerRoute.ROUTE_BERITA_ALL_BY_SKU)
+    public ResponseEntity<?> findAllBeritasBySku(@PathVariable String sku) {
+        return ResponseEntity.ok(artikelRepo.findAllBySkuAdminAndJenis(sku,"Berita"));
+    }
+
+    @GetMapping(ArtikelControllerRoute.ROUTE_PENGUMUMAN_ALL_BY_SKU)
+    public ResponseEntity<?> findAllPengumumanBySku(@PathVariable String sku) {
+        return ResponseEntity.ok(artikelRepo.findAllBySkuAdminAndJenis(sku,"Pengumuman"));
     }
 
     @GetMapping(ArtikelControllerRoute.ROUTE_ARTIKEL_DETAIL_BY_ID)
