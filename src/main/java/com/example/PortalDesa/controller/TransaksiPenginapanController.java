@@ -96,7 +96,7 @@ public class TransaksiPenginapanController {
 
     @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_FIND_ALL_PESANAN_SUDAH_BAYAR)
     public ResponseEntity<?> findAllPesananSudahBayar() {
-        return ResponseEntity.ok(transaksiPenginapanRepo.findAllByStatus(2));
+        return ResponseEntity.ok(transaksiPenginapanRepo.findAllPesananBayar());
     }
 
     @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_CANCEL_PESANAN)

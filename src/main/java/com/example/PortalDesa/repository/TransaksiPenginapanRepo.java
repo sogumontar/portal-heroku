@@ -13,15 +13,20 @@ import java.util.List;
  * Created by Sogumontar Hendra Simangunsong on 25/05/2020.
  */
 @Repository
-public interface TransaksiPenginapanRepo extends JpaRepository<TransaksiPenginapan,String> {
+public interface TransaksiPenginapanRepo extends JpaRepository<TransaksiPenginapan, String> {
     @Query("SELECT p FROM TransaksiPenginapan p  WHERE  p.status =1 AND p.skuCustomer LIKE ?1")
     public List findAllTransksiBySkuCustomer(String sku);
+
     @Query("SELECT p FROM TransaksiPenginapan p WHERE p.status <> 1 AND p.skuCustomer LIKE ?1")
     public List findAllPesananBayarBySkuCustomer(String sku);
+
     @Query("SELECT p   FROM TransaksiPenginapan p  WHERE p.status =3 AND p.skuCustomer LIKE ?1")
     public List findAllPesananSelesaiBySkuCustomer(String sku);
 
     public List findAllByStatus(Integer status);
+
+    @Query("SELECT p FROM TransaksiPenginapan p WHERE p.status <> 1 ")
+    public List findAllPesananBayar();
 
     public TransaksiPenginapan findFirstById(String id);
 
@@ -41,7 +46,7 @@ public interface TransaksiPenginapanRepo extends JpaRepository<TransaksiPenginap
     public void balikin(String idPesanan);
 
     @Query("SELECT COUNT(u.resi) FROM TransaksiPenginapan u WHERE u.skuCustomer LIKE ?1 ")
-    Integer counter (String skuCustomer);
+    Integer counter(String skuCustomer);
 
     @Modifying
     @Transactional
