@@ -73,6 +73,34 @@ public class TransaksiPenginapanController {
         return ResponseEntity.ok(new DefaultResponse("Transaction Success", 200));
     }
 
+    //WEB
+    @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_MASIH_PESAN_BY_SKU_WEB)
+    public ResponseEntity<?> findAllPesananWeb(@PathVariable String sku) {
+        return ResponseEntity.ok(transaksiPenginapanRepo.findAllTransksiBySkuCustomerWeb(sku));
+    }
+
+    @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_SUDAH_SELESAI_BY_SKU_WEB)
+    public ResponseEntity<?> findAllPesananSelesaiWeb(@PathVariable String sku) {
+        return ResponseEntity.ok(transaksiPenginapanRepo.findAllPesananSelesaiBySkuCustomerWeb(sku));
+    }
+
+    @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_SUDAH_BAYAR_BY_SKU_WEB)
+    public ResponseEntity<?> findAllPesananSudahBayarWeb(@PathVariable String sku) {
+        return ResponseEntity.ok(transaksiPenginapanRepo.findAllPesananBayarBySkuCustomerWeb(sku));
+    }
+
+    @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_FIND_ALL_PESANAN_WEB)
+    public ResponseEntity<?> findAllPesananWeb() {
+        return ResponseEntity.ok(transaksiPenginapanRepo.findAllByStatusWeb(1));
+    }
+
+    @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_FIND_ALL_PESANAN_SUDAH_BAYAR_WEB)
+    public ResponseEntity<?> findAllPesananSudahBayarWeb() {
+        return ResponseEntity.ok(transaksiPenginapanRepo.findAllPesananBayarWeb());
+    }
+
+
+
 
     @GetMapping(TransaksiPenginapanControllerRoute.ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_MASIH_PESAN_BY_SKU)
     public ResponseEntity<?> findAllPesanan(@PathVariable String sku) {

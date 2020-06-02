@@ -14,6 +14,23 @@ import java.util.List;
  */
 @Repository
 public interface TransaksiPenginapanRepo extends JpaRepository<TransaksiPenginapan, String> {
+    //Web
+    @Query("SELECT p, t FROM TransaksiPenginapan p JOIN Penginapan t ON p.skuProduk LIKE t.sku WHERE  p.status =1 AND p.skuCustomer LIKE ?1")
+    public List findAllTransksiBySkuCustomerWeb(String sku);
+
+    @Query("SELECT p, t FROM TransaksiPenginapan p JOIN Penginapan t ON p.skuProduk LIKE t.sku WHERE p.status <> 1 AND p.skuCustomer LIKE ?1")
+    public List findAllPesananBayarBySkuCustomerWeb(String sku);
+
+    @Query("SELECT p, t   FROM TransaksiPenginapan p JOIN Penginapan t ON p.skuProduk LIKE t.sku WHERE p.status =3 AND p.skuCustomer LIKE ?1")
+    public List findAllPesananSelesaiBySkuCustomerWeb(String sku);
+
+    @Query("SELECT p, t FROM TransaksiPenginapan p  JOIN Penginapan t ON p.skuProduk LIKE t.sku WHERE p.status=?1 ")
+    public List findAllByStatusWeb(Integer status);
+
+    @Query("SELECT p, t FROM TransaksiPenginapan p  JOIN Penginapan t ON p.skuProduk LIKE t.sku WHERE p.status <> 1 ")
+    public List findAllPesananBayarWeb();
+
+
     @Query("SELECT p FROM TransaksiPenginapan p  WHERE  p.status =1 AND p.skuCustomer LIKE ?1")
     public List findAllTransksiBySkuCustomer(String sku);
 

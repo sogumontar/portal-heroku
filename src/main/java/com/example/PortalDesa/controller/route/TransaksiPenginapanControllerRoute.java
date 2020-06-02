@@ -21,6 +21,16 @@ public interface TransaksiPenginapanControllerRoute {
     public String ROUTE_TRANSAKSI_PENGINAPAN_IMAGE_RESI = "/get/{filePath}";
     public String ROUTE_TRANSAKSI_PENGINAPAN_KIRIM_EMAIL = "/kirim/email/{idPesanan}";
 
+
+    //WEB
+    public String ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_SUDAH_BAYAR_BY_SKU_WEB = "/web/sku/bayar/{sku}";
+    public String ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_SUDAH_SELESAI_BY_SKU_WEB = "/web/sku/selesai/{sku}";
+    public String ROUTE_TRANSAKSI_PENGINAPAN_FIND_ALL_MASIH_PESAN_BY_SKU_WEB = "/web/sku/pesan/{sku}";
+    public String ROUTE_TRANSAKSI_FIND_ALL_PESANAN_WEB = "/web/pesanan";
+    public String ROUTE_TRANSAKSI_FIND_ALL_PESANAN_SUDAH_BAYAR_WEB = "/web/pesanan/sudah";
+
+
+
     public String ROUTE_TRANSAKSI_FIND_ALL_PESANAN = "/pesanan";
     public String ROUTE_TRANSAKSI_FIND_ALL_PESANAN_SUDAH_BAYAR = "/pesanan/sudah";
     public String ROUTE_TRANSAKSI_CANCEL_PESANAN = "/pesanan/cancel/{sku}";
