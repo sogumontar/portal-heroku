@@ -12,6 +12,7 @@ public interface TablesConstant {
     public String TABLE_PRODUK_DESA = "produk_desa";
     public String TABLE_PENGINAPAN = "penginapan";
     public String TABLE_KERANJANG = "keranjang";
+    public String TABLE_LUPA_PASSWORD = "lupa_password";
     public String TABLE_ALAMAT_CUSTOMER = "alamat_customer";
     public String TABLE_TRANSAKSI_PRODUK = "transaksi_produk";
     public String TABLE_TRANSAKSI_PENGINAPAN = "transaksi_penginapan";

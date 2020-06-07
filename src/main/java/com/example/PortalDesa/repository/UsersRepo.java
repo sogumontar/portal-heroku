@@ -28,6 +28,9 @@ public interface UsersRepo extends JpaRepository<Users, String> {
 
     Users findFirstBySku(String sku);
 
+
+    Boolean findFirstByUsername(String usename);
+
     @Query("  SELECT u FROM Users u , UserRole ur WHERE u.sku = ur.sku_user AND (ur.role_id = ?1)")
     List findAllByRoles(int val);
 
@@ -35,6 +38,11 @@ public interface UsersRepo extends JpaRepository<Users, String> {
     @Transactional
     @Query("UPDATE Users p  SET p.name=?2, p.email=?3, p.alamat=?4 WHERE p.sku LIKE ?1")
     Integer updateBysku(String sku, String name, String email, String almat);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Users p  SET p.password=?2 WHERE p.sku LIKE ?1")
+    Integer updateByPassword(String sku, String password);
 
     @Modifying
     @Transactional

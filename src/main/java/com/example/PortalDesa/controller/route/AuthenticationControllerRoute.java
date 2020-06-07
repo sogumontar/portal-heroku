@@ -14,4 +14,7 @@ public interface AuthenticationControllerRoute {
     public String ROUTE_FIND_ALL = "/";
     public String ROUTE_FIND_BY_SKU = "/findSku/{sku}";
     public String ROUTE_UPDATE_BY_SKU = "/update/{sku}";
+    public String ROUTE_UPDATE_PASSWORD_BY_SKU = "/updatePassword/{sku}";
+    public String ROUTE_FORGET_PASSWORD_BY_SKU = "/forgetPassword/{username}";
+    public String ROUTE_CHECK_CODE_FOR_LUPA_PASSWORD = "/checkCode";
 }
