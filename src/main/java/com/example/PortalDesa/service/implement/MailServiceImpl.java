@@ -94,22 +94,22 @@ public class MailServiceImpl implements MailService {
     }
 
     @Override
-    public String sendEmailPesanan(String skuCustomer, String idPesanan) {
-        Users users= usersService.findBySku(skuCustomer);
-        TransaksiProduk transaksiProduk = transaksiService.findById(idPesanan);
+    public String sendEmailPesanan(String metode, String alamat,Integer harga, String email) {
+//        Users users= usersService.findBySku(skuCustomer);
+//        TransaksiProduk transaksiProduk = transaksiService.findById(idPesanan);
         String keterangan ="Pesanan Baru";
         String metodeP;
-        if(transaksiProduk.getMetode().equals("ATM Mandiri")){
+        if(metode.equals("ATM Mandiri")){
             metodeP = "\nNo Rek : 5412751234123456"+"\nAtas Nama : Benyamin Simanungkalit";
         }else {
             metodeP = "\nNo Rek : 7712654312317006"+"\nAtas Nama : Ojaks Sidabukke";
         }
         String msgFinal ;
             keterangan = "Pesanan Baru";
-            msgFinal = "\n Alamat Pengiriman : " + transaksiProduk.getAlamat() +
-                    "\n Metode Pembayaran : " + transaksiProduk.getMetode() +
+            msgFinal = "\n Alamat Pengiriman : " + alamat +
+                    "\n Metode Pembayaran : " + metode +
                     metodeP+
-                    "\nTotal Harga Pesanan : " + transaksiProduk.getHarga()
+                    "\nTotal Harga Pesanan : " + harga
                     + "\n\n\n\nTerimakasih telah menggunakan aplikasi kami."+ "\nSampai jumpa di pesanan berikutnya ";
         final String username = MailDefaults.EMAIL;
         final String password = MailDefaults.PASSWORD;
@@ -132,7 +132,7 @@ public class MailServiceImpl implements MailService {
             message.setFrom(new InternetAddress(MailDefaults.EMAIL));
             message.setRecipients(
                     Message.RecipientType.TO,
-                    InternetAddress.parse(users.getEmail())
+                    InternetAddress.parse(email)
             );
             message.setSubject("Transaksi Portal Desa " + keterangan);
             message.setText(msgFinal);

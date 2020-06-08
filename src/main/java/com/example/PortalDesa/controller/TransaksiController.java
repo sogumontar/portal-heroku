@@ -2,10 +2,12 @@ package com.example.PortalDesa.controller;
 
 import com.example.PortalDesa.controller.route.TransaksiControllerRoute;
 import com.example.PortalDesa.model.TransaksiProduk;
+import com.example.PortalDesa.model.Users;
 import com.example.PortalDesa.payload.DefaultResponse;
 import com.example.PortalDesa.repository.TransaksiProdukRepo;
 import com.example.PortalDesa.service.MailService;
 import com.example.PortalDesa.service.TransaksiService;
+import com.example.PortalDesa.service.UsersService;
 import com.example.PortalDesa.service.implement.StorageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -33,9 +35,11 @@ public class TransaksiController {
     @Autowired
     StorageServiceImpl storageService;
 
-
     @Autowired
     MailService mailService;
+
+    @Autowired
+    UsersService usersService;
 
     @PutMapping(TransaksiControllerRoute.ROUTE_TRANSAKSI_BAYAR_RESI)
     public ResponseEntity<?> update(@PathVariable String idPesanan, @RequestBody TransaksiProduk transaksiProduk) {
@@ -69,7 +73,10 @@ public class TransaksiController {
         System.out.println(transaksiProduk);
         transaksiService.save(transaksiProduk, 2);
         transaksiService.updateCart(transaksiProduk.getSkuCustomer());
-        mailService.sendEmailPesanan(transaksiProduk.getSkuCustomer(),transaksiProduk.getId());
+        System.out.println(transaksiProduk.getSkuCustomer() + "        " +transaksiProduk.getId());
+        Users users = usersService.findBySku(transaksiProduk.getSkuCustomer());
+        System.out.println(transaksiProduk.getMetode()+ "    "+transaksiProduk.getAlamat()+ "    "+transaksiProduk.getHarga()+ "    "+users.getEmail());
+        mailService.sendEmailPesanan(transaksiProduk.getMetode(),transaksiProduk.getAlamat(),transaksiProduk.getHarga(),users.getEmail());
         return ResponseEntity.ok(new DefaultResponse("Transaction Success", 200));
     }
 

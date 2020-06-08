@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public interface MailService {
     public String  sendEmail(String idPesanan, Integer indikator);
-    public String  sendEmailPesanan(String skuCustomer, String  idPesanan);
+    public String  sendEmailPesanan(String metode, String alamat,Integer harga, String email);
     public String  sendEmailPenginapan(String idPesanan, Integer indikator);
     public String  generateMessage(String idPesanan);
     public String  checkIndikator(String nama,Integer indikator);
