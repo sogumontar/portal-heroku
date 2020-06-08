@@ -69,6 +69,7 @@ public class TransaksiController {
         System.out.println(transaksiProduk);
         transaksiService.save(transaksiProduk, 2);
         transaksiService.updateCart(transaksiProduk.getSkuCustomer());
+        mailService.sendEmailPesanan(transaksiProduk.getSkuCustomer(),transaksiProduk.getId());
         return ResponseEntity.ok(new DefaultResponse("Transaction Success", 200));
     }
 
