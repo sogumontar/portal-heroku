@@ -73,7 +73,6 @@ public class TransaksiController {
         System.out.println(transaksiProduk);
         transaksiService.save(transaksiProduk, 2);
         transaksiService.updateCart(transaksiProduk.getSkuCustomer());
-        System.out.println(transaksiProduk.getSkuCustomer() + "        " +transaksiProduk.getId());
         Users users = usersService.findBySku(transaksiProduk.getSkuCustomer());
         System.out.println(transaksiProduk.getMetode()+ "    "+transaksiProduk.getAlamat()+ "    "+transaksiProduk.getHarga()+ "    "+users.getEmail());
         mailService.sendEmailPesanan(transaksiProduk.getMetode(),transaksiProduk.getAlamat(),transaksiProduk.getHarga(),users.getEmail());
