@@ -23,7 +23,7 @@ public class Penginapan {
     String nama;
     @Column(name = FieldForTablePenginapan.FIELD_HARGA_PENGINAPAN)
     Integer harga;
-    @Column(name = FieldForTablePenginapan.FIELD_DESKRIPSI)
+    @Column(name = FieldForTablePenginapan.FIELD_DESKRIPSI, length=10485760)
     String deskripsi;
     @Column(name = FieldForTablePenginapan.FIELD_JUMLAH_KAMAR)
     Integer jumlahKamar;

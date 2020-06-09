@@ -29,7 +29,7 @@ public class ProdukDesa {
     @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_GAMBAR)
     String gambar = PathImageDb.PATH_FOR_IMAGE_PRODUK_DESA+"Default.jpg";
 
-    @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_DESKRIPSI)
+    @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_DESKRIPSI, length=10485760)
     String deskripsi;
 
     @Column(name = FieldForProdukDesa.FIELD_PRODUK_DESA_SKU_DESA)

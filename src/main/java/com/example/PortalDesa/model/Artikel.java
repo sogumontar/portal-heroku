@@ -28,7 +28,7 @@ public class Artikel {
     @Column(name = FieldForArticle.FIELD_ARTIKEL_JENIS)
     String jenis;
 
-    @Column(name = FieldForArticle.FIELD_ARTIKEL_ISI)
+    @Column(name = FieldForArticle.FIELD_ARTIKEL_ISI, length=10485760)
     String isi;
 
     @Column(name = FieldForArticle.FIELD_ARTIKEL_SUMBER)
