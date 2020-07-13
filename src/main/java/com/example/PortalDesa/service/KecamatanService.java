@@ -1,8 +1,10 @@
 package com.example.PortalDesa.service;
 
 import com.example.PortalDesa.model.Kecamatan;
+import com.example.PortalDesa.payload.request.KecamatanRequest;
 import org.springframework.http.ResponseEntity;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -14,5 +16,9 @@ public interface KecamatanService {
     public List findAllWithDesa();
 
     public Kecamatan findFirstByNama(String name);
+
+    public void addNewKecamatan(KecamatanRequest kecamatanRequest) throws IOException;
+
+    public void deleteBySku(String sku);
 
 }

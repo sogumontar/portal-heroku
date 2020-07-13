@@ -9,6 +9,10 @@ public interface ProdukDesaControllerRoute {
 
 
     public String ROUTE_PRODUK_DESA_ALL = "/";
+    public String ROUTE_PRODUK_DESA_ALL_ASC = "/ASC/";
+    public String ROUTE_PRODUK_DESA_ALL_DESC = "/DESC/";
+    public String ROUTE_PRODUK_DESA_ALL_FILTERED_BY_HARGA_ASC = "/harga/ASC";
+    public String ROUTE_PRODUK_DESA_ALL_FILTERED_BY_HARGA_DESC = "/harga/DESC";
     public String ROUTE_PRODUK_DESA_POPULAR = "/popular/";
     public String ROUTE_PRODUK_DESA_ALL_BY_SKU_DESA = "/skuDesa/{sku}";
     public String ROUTE_PRODUK_DESA_ADD = "/add";

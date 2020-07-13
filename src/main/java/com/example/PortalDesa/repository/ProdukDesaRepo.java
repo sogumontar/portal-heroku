@@ -19,6 +19,18 @@ public interface ProdukDesaRepo extends JpaRepository<ProdukDesa, String> {
     @Query("SELECT p FROM ProdukDesa p WHERE p.status =1 ")
     public List<ProdukDesa> findAll();
 
+    @Query("SELECT p FROM ProdukDesa p WHERE p.status =1 ORDER BY  p.nama ASC ")
+    public List<ProdukDesa> findAllAsc();
+
+    @Query("SELECT p FROM ProdukDesa p WHERE p.status =1 ORDER BY  p.nama DESC ")
+    public List<ProdukDesa> findAllDesc();
+
+    @Query("SELECT p FROM ProdukDesa p WHERE p.status =1 ORDER BY  p.harga DESC ")
+    public List<ProdukDesa> findAllFilterHargaDesc();
+
+    @Query("SELECT p FROM ProdukDesa p WHERE p.status =1 ORDER BY  p.harga ASC ")
+    public List<ProdukDesa> findAllFilterHargaASC();
+
     @Query(value = "SELECT  * FROM produk_desa   WHERE status =1  ORDER BY jumlah_pembelian ASC  LIMIT 1",nativeQuery = true)
     public ProdukDesa findPopular();
 

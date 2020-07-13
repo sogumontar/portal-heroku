@@ -23,6 +23,14 @@ public interface ProdukDesaService {
 
     public List<ProdukDesa> findAll();
 
+    public List<ProdukDesa> findAllAsc();
+
+    public List<ProdukDesa> findAllDesc();
+
+    public List<ProdukDesa> findAllFilterHargaASC();
+
+    public List<ProdukDesa> findAllFilterHargaDESC();
+
     public ProdukDesa findBySku(String sku);
 
     public void updateProduk(String sku, ProdukDesaRequest request);

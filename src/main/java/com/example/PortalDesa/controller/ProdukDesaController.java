@@ -39,6 +39,28 @@ public class ProdukDesaController {
         return ResponseEntity.ok(produkDesaService.findAll());
     }
 
+    @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ALL_ASC)
+    public ResponseEntity<?> findAllAsc() {
+        return ResponseEntity.ok(produkDesaService.findAllAsc());
+    }
+
+
+    @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ALL_DESC)
+    public ResponseEntity<?> findAllDesc() {
+        return ResponseEntity.ok(produkDesaService.findAllDesc());
+    }
+
+    @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ALL_FILTERED_BY_HARGA_ASC)
+    public ResponseEntity<?> findAllFilterHargaASC() {
+        return ResponseEntity.ok(produkDesaService.findAllFilterHargaASC());
+    }
+
+    @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_ALL_FILTERED_BY_HARGA_DESC)
+    public ResponseEntity<?> findAllFilterHargaDESC() {
+        return ResponseEntity.ok(produkDesaService.findAllFilterHargaDESC());
+    }
+
+
     @GetMapping(ProdukDesaControllerRoute.ROUTE_PRODUK_DESA_POPULAR)
     public ResponseEntity<?> findPopular() {
         System.out.println(produkDesaService.findPopular());

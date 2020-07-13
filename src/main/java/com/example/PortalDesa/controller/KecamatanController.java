@@ -3,6 +3,9 @@ package com.example.PortalDesa.controller;
 import com.example.PortalDesa.controller.route.DesaControllerRoute;
 import com.example.PortalDesa.controller.route.KecamatanControllerRoute;
 import com.example.PortalDesa.model.Kecamatan;
+import com.example.PortalDesa.payload.DefaultResponse;
+import com.example.PortalDesa.payload.request.AddDesaPictureRequest;
+import com.example.PortalDesa.payload.request.KecamatanRequest;
 import com.example.PortalDesa.repository.KecamatanRepo;
 import com.example.PortalDesa.service.StorageService;
 import com.example.PortalDesa.service.implement.KecamatanServiceImpl;
@@ -14,10 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -56,5 +56,26 @@ public class KecamatanController {
         headers.setContentType(MediaType.IMAGE_PNG);
         return new ResponseEntity<byte[]>(storageService.loadImage("Kecamatan",filePath), headers, HttpStatus.OK);
     }
+
+    @PostMapping(KecamatanControllerRoute.ROUTE_KECAMATAN_ADD_NEW)
+    public ResponseEntity<?> addNewKecamatan(@RequestBody KecamatanRequest kecamatanRequest) throws IOException {
+        kecamatanService.addNewKecamatan(kecamatanRequest);
+        return ResponseEntity.ok().body(new DefaultResponse("Sukses",201));
+    }
+
+    @PutMapping(KecamatanControllerRoute.ROUTE_KECAMATAN_ADD_IMAGE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<?> addDesaPicture(@RequestBody AddDesaPictureRequest addDesaPictureRequest) throws IOException {
+        kecamatanService.addImage(addDesaPictureRequest.getBase64File(),addDesaPictureRequest.getSkuDesa());
+        return ResponseEntity.ok("");
+    }
+
+    @GetMapping(KecamatanControllerRoute.ROUTE_KECAMATAN_DELETE_BY_SKU)
+    public ResponseEntity<?> deleteBySku(@PathVariable String sku){
+        kecamatanService.deleteBySku(sku);
+        return ResponseEntity.ok().body(new DefaultResponse("Sukses",200));
+    }
+
+
 
 }

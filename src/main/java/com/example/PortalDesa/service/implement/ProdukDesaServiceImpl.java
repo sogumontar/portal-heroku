@@ -83,6 +83,27 @@ public class ProdukDesaServiceImpl implements ProdukDesaService {
     }
 
     @Override
+    public List<ProdukDesa> findAllAsc() {
+        return produkDesaRepo.findAllAsc();
+    }
+
+    @Override
+    public List<ProdukDesa> findAllDesc() {
+        return produkDesaRepo.findAllDesc();
+    }
+
+    @Override
+    public List<ProdukDesa> findAllFilterHargaASC() {
+        return produkDesaRepo.findAllFilterHargaASC();
+    }
+
+    @Override
+    public List<ProdukDesa> findAllFilterHargaDESC() {
+        return produkDesaRepo.findAllFilterHargaDesc();
+    }
+
+
+    @Override
     public ProdukDesa findBySku(String sku) {
         return produkDesaRepo.findFirstBySku(sku);
     }
